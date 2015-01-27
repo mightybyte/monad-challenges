@@ -35,14 +35,8 @@ come back when you think you need to learn monads.
 
 * Doug Beardsley
 
+## Outline
 
-
-* Set 1: Maybe (still need good example)
-* Set 2: State (random number generation)
-
-Monad concepts to introduce
-
-1. return, bind, >>
-2. do notation
-3. liftM, sequence
+* [Set 1: State (random number generation)](sets/1/index.md)
+* [Set 2: Maybe (still need good example)](sets/2/index.md)
 
