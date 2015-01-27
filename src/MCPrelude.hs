@@ -24,9 +24,6 @@ module MCPrelude (
     Bool(False, True),
     (&&), (||), not, otherwise,
 
-    Maybe(Nothing, Just),
-    maybe,
-
     Either(Left, Right),
     either,
 
@@ -72,7 +69,7 @@ module MCPrelude (
 
     -- * List operations
     map, (++), filter,
-    head, last, tail, init, null, length, (!!),
+    null, length, (!!),
     reverse,
     -- ** Reducing lists (folds)
     foldl, foldl1, foldr, foldr1,
@@ -89,7 +86,7 @@ module MCPrelude (
     -- ** Sublists
     take, drop, splitAt, takeWhile, dropWhile, span, break,
     -- ** Searching lists
-    elem, notElem, lookup,
+    elem, notElem,
     -- ** Zipping and unzipping lists
     zip, zip3, zipWith, zipWith3, unzip, unzip3,
     -- ** Functions on strings
@@ -110,7 +107,6 @@ module MCPrelude (
 
 import Data.List
 import Data.Either
-import Data.Maybe
 import Data.Tuple
 
 import GHC.Base
