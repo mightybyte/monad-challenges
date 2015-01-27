@@ -24,6 +24,7 @@ can get by working through things yourself.
 1. [Random number generation](challenges/1.md)
 1. [Random character generation](challenges/2.md)
 1. [Combining two random generators](challenges/3.md)
-1. [Generalizing random pairs](challenges/3.md)
+1. [Generalizing random pairs](challenges/4.md)
+1. [Generalizing multiple generators](challenges/5.md)
 
 
