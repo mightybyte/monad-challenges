@@ -1,4 +1,4 @@
-# the monad challenges
+# The Monad Challenges
 
 ## Welcome
 
