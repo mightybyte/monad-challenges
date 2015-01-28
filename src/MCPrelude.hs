@@ -75,7 +75,7 @@ module MCPrelude (
     foldl, foldl1, foldr, foldr1,
     -- *** Special folds
     and, or, any, all,
-    sum, product,
+    sum,
     concat, concatMap,
     maximum, minimum,
     -- ** Building lists
@@ -103,6 +103,13 @@ module MCPrelude (
     Read(readsPrec, readList),
     reads, readParen, read, lex,
 
+    Seed,
+    mkSeed,
+    rand,
+
+    GreekData,
+    ex09DataA,
+    ex09DataB
   ) where
 
 import Data.List
@@ -133,3 +140,34 @@ f $! x  = let !vx = x in f vx  -- see #2273
 seq :: a -> b -> b
 seq _ y = y
 #endif
+
+newtype Seed = Seed { unSeed :: Integer }
+  deriving (Eq,Show)
+
+mkSeed :: Integer -> Seed
+mkSeed n = Seed n
+
+m :: Integer
+m = 0x7FFFFFFF
+
+rand :: Seed -> (Integer, Seed)
+rand (Seed s) = (s', Seed s')
+  where
+    s' = (s * 16807) `mod` m
+
+type GreekData = [(String, [Integer])]
+
+ex09DataA :: GreekData
+ex09DataA = [ ("alpha", [5, 10])
+            , ("beta", [0, 8])
+            , ("gamma", [18, 47, 60])
+            , ("delta", [42])
+            ]
+
+ex09DataB :: GreekData
+ex09DataB = [ ("phi", [53, 13])
+            , ("chi", [21, 8, 191])
+            , ("psi", [])
+            , ("omega", [6, 82, 144])
+            ]
+
