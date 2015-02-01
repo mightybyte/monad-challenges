@@ -31,6 +31,13 @@ trying to teach you Haskell here.  We are trying to teach you monads.  If you
 need to learn Haskell, go work through some beginning Haskell materials and
 come back when you think you need to learn monads.
 
+### Organizing Your Code
+
+It will probably help if you organize your code into one file per set of
+challenges.  Some of the problem sets build on previous ones, so it will be
+convenient to be able to easily import your code for a whole set or find it
+for reference.
+
 ### Who did this?
 
 * Doug Beardsley
@@ -39,4 +46,5 @@ come back when you think you need to learn monads.
 
 * [Set 1: State (random number generation)](sets/1/index.md)
 * [Set 2: Maybe (still need good example)](sets/2/index.md)
+* [Set 3: Finding general patterns](sets/3/index.md)
 
