@@ -1,9 +1,8 @@
-# Monad Challenge Set 2
+# Monad Challenge Set 3
 
-7. [Handling failure](challenges/7.md)
-8. [Build a library of things that can fail](challenges/8.md)
-9. [Chains of failing computations](challenges/9.md)
-10. [Generalizing chains of failures](challenges/10.md)
-11. [Chaining variations](challenges/10.md)
+1. [Generalizing State and Maybe](set3-1.md)
+2. [A missed generalization](set3-2.md)
+3. [Formalizing the pattern](set3-3.md)
+4. [Creating instances](set3-4.md)
 
 
