@@ -27,10 +27,19 @@ No.
 ### Do I need to know Haskell?
 
 Yes, we assume that you have some beginner "pre-monad" level knowledge of
-Haskell including basic syntax and knowledge of type signatures.  We are not
-trying to teach you Haskell here.  We are trying to teach you monads.  If you
-need to learn Haskell, go work through some beginning Haskell materials and
-come back when you think you need to learn monads.
+the following Haskell concepts:
+
+* Basic syntax
+* Type signatures
+* Higher order functions
+* Type aliases
+* newtypes
+* Polymorphism
+* Type classes
+
+We are not trying to teach you Haskell here.  We are trying to teach you
+monads.  If you need to learn Haskell, go work through some beginning Haskell
+materials and come back when you think you need to learn monads.
 
 ### Organizing Your Code
 

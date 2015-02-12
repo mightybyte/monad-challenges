@@ -10,6 +10,7 @@ For all of the problems in this set, use the following language pragmas and
 imports:
 
     {-# LANGUAGE NoImplicitPrelude #-}
+    {-# LANGUAGE RebindableSyntax  #-}
 
     import MCPrelude
     import MCRand
