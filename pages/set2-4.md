@@ -10,7 +10,7 @@ don't want you to use those right now.  And those methods are widely
 considered unsafe anyway.)  
 
 Bottom line...this is obviously not how we want to write our code.  There is a
-huge amount of repetition in our ex09 function and we need to figure out how
+huge amount of repetition in our queryGreek function and we need to figure out how
 to get rid of it.  If you're really ambitious, stop reading now and see if you
 can figure it out.  If you can't figure it out, keep reading.
 
@@ -53,14 +53,14 @@ signature.
 Ok, now our chain function has the function that it needs to pass something to.
 But what does it need next?  Well, there are two ways to think about this.
 One way is to think of chain as a function that takes one function and
-transforms it into another function.  Our problem in ex09 was that we always
+transforms it into another function.  Our problem in queryGreek was that we always
 had a `Maybe a` instead of an `a`.  So maybe that suggests what the rest of
 this function should be...
 
     chain :: (a -> Maybe b) -> (Maybe a -> Maybe b)
 
 The other way of thinking about it is what kind of data we had to work with.
-At every step of the way in ex09 we had a `Maybe a`.  So maybe the next
+At every step of the way in queryGreek we had a `Maybe a`.  So maybe the next
 argument to chain should be that.
 
     chain :: (a -> Maybe b) -> Maybe a -> ...
@@ -84,13 +84,13 @@ flipped version of chain:
 After you do that, implement this function using your link function.  (You can
 also do it with chain, but link tends to facilitate a more convenient style.)
 
-    ex10 :: GreekData -> String -> Maybe Double
+    queryGreek2 :: GreekData -> String -> Maybe Double
 
-This function should have the exact same behavior as ex09 from the previous
+This function should have the exact same behavior as queryGreek from the previous
 exercise.
 
-Writing ex10 will probably be more difficult than writing chain.  There should
-be no case statements in ex10--only calls to link or chain.  Once you have it
+Writing queryGreek2 will probably be more difficult than writing chain.  There should
+be no case statements in queryGreek2--only calls to link or chain.  Once you have it
 working, play around with other syntax possibilities and see if you can get it
 to look nice.  Hint: lambdas are your friend.
 

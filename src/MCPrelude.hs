@@ -108,8 +108,8 @@ module MCPrelude (
     rand,
 
     GreekData,
-    ex09DataA,
-    ex09DataB
+    greekDataA,
+    greekDataB
   ) where
 
 import Data.List
@@ -157,17 +157,17 @@ rand (Seed s) = (s', Seed s')
 
 type GreekData = [(String, [Integer])]
 
-ex09DataA :: GreekData
-ex09DataA = [ ("alpha", [5, 10])
-            , ("beta", [0, 8])
-            , ("gamma", [18, 47, 60])
-            , ("delta", [42])
-            ]
+greekDataA :: GreekData
+greekDataA = [ ("alpha", [5, 10])
+             , ("beta", [0, 8])
+             , ("gamma", [18, 47, 60])
+             , ("delta", [42])
+             ]
 
-ex09DataB :: GreekData
-ex09DataB = [ ("phi", [53, 13])
-            , ("chi", [21, 8, 191])
-            , ("psi", [])
-            , ("omega", [6, 82, 144])
-            ]
+greekDataB :: GreekData
+greekDataB = [ ("phi", [53, 13])
+             , ("chi", [21, 8, 191])
+             , ("psi", [])
+             , ("omega", [6, 82, 144])
+             ]
 
