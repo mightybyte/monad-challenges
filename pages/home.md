@@ -54,7 +54,7 @@ for reference.
 
 ## Outline
 
-* [Set 1: State (random number generation)](sets/1/index.md)
-* [Set 2: Maybe (still need good example)](sets/2/index.md)
-* [Set 3: Finding general patterns](sets/3/index.md)
+* [Set 1: State (random number generation)](set1.md)
+* [Set 2: Maybe (still need good example)](set2.md)
+* [Set 3: Finding general patterns](set3.md)
 

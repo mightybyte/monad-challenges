@@ -22,11 +22,11 @@ package, or the mtl package.  You're doing this to learn.  To do that you need
 to struggle with the concepts, so don't cheat yourself out of the benefit you
 can get by working through things yourself.
 
-1. [Random number generation](challenges/1.md)
-1. [Random character generation](challenges/2.md)
-1. [Combining two random generators](challenges/3.md)
-1. [Generalizing random pairs](challenges/4.md)
-1. [Generalizing lists of generators](challenges/5.md)
-1. [Generalizing pairs even more](challenges/6.md)
+1. [Random number generation](set1-1.md)
+1. [Random character generation](set1-2.md)
+1. [Combining two random generators](set1-3.md)
+1. [Generalizing random pairs](set1-4.md)
+1. [Generalizing lists of generators](set1-5.md)
+1. [Generalizing pairs even more](set1-6.md)
 
 
