@@ -1,13 +1,8 @@
 # Monad Challenge Set 2
 
-Here is the header you should use at the top of your code file.
-
-    {-# LANGUAGE MonadComprehensions #-}
-    {-# LANGUAGE RebindableSyntax #-}
-    
-    module Set2 where
-    
-    import MCPrelude
+This set deals with programming patterns that arise when dealing with
+computations that might fail.  Failing computations come up all the time in
+the real world and Haskell can provide great tools for dealing with them.
 
 1. [Handling failure](set2-1.md)
 2. [Build a library of things that can fail](set2-2.md)
