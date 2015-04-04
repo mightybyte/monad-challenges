@@ -23,12 +23,12 @@ Now generalize the above function.
 This function makes the Gen type alias almost essential.  Here's what we would
 have had to write if we didn't have Gen:
 
-    generalPair :: (Seed -> (a, Seed)) -> (Seed -> (b, Seed)) -> (Seed -> ((a,b), Seed)
+    generalPair :: (Seed -> (a, Seed)) -> (Seed -> (b, Seed)) -> (Seed -> ((a,b), Seed))
 
 Removing the unnecessary parentheses gets is this type signature, which will
 probably help you a little when implementing the function.
 
-    generalPair :: (Seed -> (a, Seed)) -> (Seed -> (b, Seed)) -> Seed -> ((a,b), Seed
+    generalPair :: (Seed -> (a, Seed)) -> (Seed -> (b, Seed)) -> Seed -> ((a,b), Seed)
 
 Test this generalized function by comparing its output to what you got from
 randPair.

@@ -1,0 +1,13 @@
+# Permutations of three things
+
+Our allPerms function is more general but it still only lets us generate
+permutations of two things.  It is probably not not immediately obvious how to
+extend your allPerms function to do that.  First implement an allPerms3
+function that generates permutations of 3 things.  Don't try to do anything
+fancy yet.  Just use the most straightforward approach you can think of.
+
+    allPerms3 :: (a -> b -> c -> d) -> [a] -> [b] -> [c] -> [d]
+
+Here is example output to check your function.
+
+    allPerms3 (,,) [1,2] [3,4] [5,6] == [(1,3,5),(1,3,6),(1,4,5),(1,4,6),(2,3,5),(2,3,6),(2,4,5),(2,4,6)]

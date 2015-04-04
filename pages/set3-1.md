@@ -12,7 +12,7 @@ First, write this function:
 This function should generate all possible pairs of items from each of the two
 input lists.  This means it should NOT have this behavior:
 
-    allPairs [1,2] [3,4] == [(1,2), (3,4)]
+    allPairs [1,2,3] [4,5,6] == [(1,4),(2,5),(3,6)]
 
 That's the zip function and it's not what we are looking for here.  Instead,
 your function should generate this:

@@ -1,1 +1,10 @@
 # Generalizing pairs and cards
+
+As we have done before, look at your allPairs and allCards functions and find
+the differences.  Then implement a more general function that can be used to
+implement both allPairs and allCards.  Call this new function allPerms.
+
+    allPerms :: (a -> b -> c) -> [a] -> [b] -> [c]
+
+Then go back and reimplement allPairs and allCards in terms of allPerms.
+Verify that they do the same thing as the original functions.

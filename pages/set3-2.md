@@ -12,15 +12,16 @@ poker-related program, instead of using a tuple you would probably create a
 data type Card.  Do that now and then write a Show instance for it that
 returns the more concise representation "2H", "2D", etc.
 
-    show (Card 2 "h") == "2h"
+    show (Card 2 'h') == "2h"
 
 Now create a new function allCards that does the same thing as your allPairs
 function but uses your new Card data type instead.  It should have the
 following type signature:
 
-    allCards :: [a] -> [b] -> [Card]
+    allCards :: [Int] -> [Char] -> [Card]
 
 This function should do the same thing as allPairs, but with more concise
-output.
+output.  When you write this function, don't implement it using your previous
+allPairs function.  Rewrite it.
 
     allCards cardRanks cardSuits == [2H,2D,2C,2S,3H,3D,3C,3S,4H,4D,4C,4S,5H,5D,5C,5S]

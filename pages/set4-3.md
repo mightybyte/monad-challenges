@@ -1,7 +1,7 @@
 # Formalizing the Pattern
 
 Now that we have identified a pattern that we want to abstract, we need to
-formalize it somehow.  When we did an abstraction like this before we took a
+formalize it somehow.  When we did an abstraction like this before, we took a
 repeated type signature expression and created a shorthand name for it with a
 type alias and a type variable.  The modification only affected type
 signatures and had nothing to do with the implementations.  Now we are trying
@@ -12,17 +12,19 @@ do.
 Clearly the random number example and the failing computation example have
 some similarities, but clearly they also have some differences.  We're trying
 to find the smallest set of fundamental primitives that have to be different.
-We have two candidates for those thing: genTwo/link and generalB2/yLink.  We
+We have two candidates for those things: genTwo/link and generalB2/yLink.  We
 just saw that generalB2/yLink can be written in terms of genTwo/link, so let's
-assume that genTwo/link are part of the fundamental set of primitives.
+assume that the genTwo/link abstraction is part of the fundamental set of
+primitives.
 
 Whatever this pattern is that is common between random number generation and
 failing computations, we need to give it a name so we can talk about it more
 easily.  Let's call it a monad!  You know how companies these days have been
 giving themselves nonsensical names that allow them to completely define their
 brand without competing with their customers' preconceived notions of what
-common words mean?  Well, we're doing the same thing here.  Now that we have a
-name we need to create a type class:
+common words mean?  Well, we're doing the same thing here (well,
+mathematicians did it for us awhile back).  Now that we have a name we need to
+create a type class:
 
     class Monad m where
 
@@ -31,9 +33,9 @@ challenge #12 is one of the ones we want to put into our type class, and if
 you used the type variable 'm', you should be able to drop it in.  All we need
 is a name.  Let's use the name `bind`.
 
-Now we have part of our type class your task is to create a single unified
-implementation for generalB2/yLink.  Most of it should be the same, but you'll
-find that there is one part that is different for the two.  Make that part
-into the second function of the type class.  Call this function `return`.
-Figure out what the type signature should be.
+Now that we have part of our type class your task is to create a single
+unified implementation for generalB2/yLink.  Most of it should be the same,
+but you'll find that there is one part that is different for the two.  Make
+that part into the second function of the type class.  Call this function
+`return`.  Figure out what the type signature should be.
 
