@@ -19,11 +19,11 @@ working with (removing some type class constraints for clarity).
 
     headMay :: [a] -> Maybe a
     tailMay :: [a] -> Maybe [a]
-    prodMay :: [a] -> Maybe a
+    maximumMay :: [a] -> Maybe a
 
-All three of these functions look very similar.  What is the pattern that they
-all fit into?  Well, they all return a Maybe something.  And their parameter
-is always something else that is not a Maybe.  So how would we generalize this
+All of these functions look very similar.  What is the pattern that they all
+fit into?  Well, they all return a Maybe something.  And their parameter is
+always something else that is not a Maybe.  So how would we generalize this
 pattern?  The standard trick to generalizing things is to stick type variables
 in place of all the things that can change.  So our failure pattern looks like
 this:
@@ -86,11 +86,11 @@ also do it with chain, but link tends to facilitate a more convenient style.)
 
     queryGreek2 :: GreekData -> String -> Maybe Double
 
-This function should have the exact same behavior as queryGreek from the previous
-exercise.
+This function should have the exact same behavior as queryGreek from the
+previous exercise.
 
-Writing queryGreek2 will probably be more difficult than writing chain.  There should
-be no case statements in queryGreek2--only calls to link or chain.  Once you have it
-working, play around with other syntax possibilities and see if you can get it
-to look nice.  Hint: lambdas are your friend.
+Writing queryGreek2 will probably be more difficult than writing chain.  There
+should be no case statements in queryGreek2--only calls to link or chain.
+Once you have it working, play around with other syntax possibilities and see
+if you can get it to look nice.  Hint: lambdas are your friend.
 

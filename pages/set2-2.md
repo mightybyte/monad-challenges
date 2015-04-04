@@ -8,6 +8,7 @@ safe versions of several common functions specified by the prelude.
     lookupMay :: Eq a => a -> [(a, b)] -> Maybe b
     divMay :: (Eq a, Fractional a) => a -> a -> Maybe a
     maximumMay :: Ord a => [a] -> Maybe a
+    minimumMay :: Ord a => [a] -> Maybe a
 
 The functions headMay and tailMay are "safe" versions of the well known head
 and tail functions.  The former returns the first element of a list or Nothing
@@ -20,9 +21,9 @@ divMay function should return Nothing if you're dividing by zero and result
 of the division otherwise.  maximumMay calculates the maximum of all the
 numbers in the list, but if the list is empty it returns Nothing.
 
-The maximumMay function is slightly annoying.  Our restricted prelude may prevent
-you from using things that you would like to use to make your life easier
-here.  This is intentional foreshadowing of things to come.  Just bite the
-bullet and write the function.  It's only 7 short lines including the type
-signature.
+The maximumMay and minimumMay functions are slightly annoying.  Our restricted
+prelude may prevent you from using things that you would like to use to make
+your life easier here.  This is intentional foreshadowing of things to come.
+Just bite the bullet and write the function.  It's only 7 short lines
+including the type signature.
 

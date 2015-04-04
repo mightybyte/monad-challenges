@@ -1,0 +1,25 @@
+# Generating permutations
+
+Have you ever needed to generate all possible permutations of something?  In
+imperative languages generating combinations and permutations always seemed
+like a pain to me.  We are going to explore how Haskell can make permutation
+generation easier.
+
+First, write this function:
+
+    allPairs :: [a] -> [b] -> [(a,b)]
+
+This function should generate all possible pairs of items from each of the two
+input lists.  This means it should NOT have this behavior:
+
+    allPairs [1,2] [3,4] == [(1,2), (3,4)]
+
+That's the zip function and it's not what we are looking for here.  Instead,
+your function should generate this:
+
+    allPairs [1,2] [3,4] == [(1,3),(1,4),(2,3),(2,4)]
+
+Here is another test case:
+
+    allPairs [1..3] [6..8] == [(1,6),(1,7),(1,8),(2,6),(2,7),(2,8),(3,6),(3,7),(3,8)]
+

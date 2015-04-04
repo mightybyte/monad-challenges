@@ -64,7 +64,6 @@ module MCPrelude (
 
     -- ** Miscellaneous functions
     id, const, (.), flip, ($), until,
-    asTypeOf, error,
     seq, ($!),
 
     -- * List operations
@@ -75,9 +74,8 @@ module MCPrelude (
     foldl, foldl1, foldr, foldr1,
     -- *** Special folds
     and, or, any, all,
-    sum,
+    product, sum,
     concat, concatMap,
-    maximum, minimum,
     -- ** Building lists
     -- *** Scans
     scanl, scanl1, scanr, scanr1,
@@ -109,7 +107,12 @@ module MCPrelude (
 
     GreekData,
     greekDataA,
-    greekDataB
+    greekDataB,
+    firstNames,
+    lastNames,
+    cardRanks,
+    cardSuits
+
   ) where
 
 import Data.List
@@ -170,4 +173,16 @@ greekDataB = [ ("phi", [53, 13])
              , ("psi", [])
              , ("omega", [6, 82, 144])
              ]
+
+firstNames :: [String]
+firstNames = ["alice", "bob", "carol", "dave"]
+
+lastNames :: [String]
+lastNames = ["doe", "jones", "smith"]
+
+cardRanks :: [Int]
+cardRanks = [2, 3, 4, 5]
+
+cardSuits :: [String]
+cardSuits = ["H", "D", "C", "S"]
 

@@ -52,9 +52,30 @@ for reference.
 
 * Doug Beardsley
 
+### Code Template
+
+For all of these problem sets you should use the following language pragmas
+and imports:
+
+    {-# LANGUAGE MonadComprehensions #-}
+    {-# LANGUAGE RebindableSyntax  #-}
+
+    module Set1 where
+
+    import MCPrelude
+
+MCPrelude should be the only module you import.  Do not import any other
+modules.  We are giving you a special prelude because we want you to solve
+these challenges without the use of monad libraries that have already done the
+work for you.  Also, don't look at the code in Control.Monad, the transformers
+package, or the mtl package.  You're doing this to learn.  To do that you need
+to struggle with the concepts.  Don't cheat yourself out of the benefit you
+can get by working through things yourself.
+
 ## Outline
 
-* [Set 1: State (random number generation)](set1.md)
-* [Set 2: Maybe (still need good example)](set2.md)
-* [Set 3: Finding general patterns](set3.md)
+* [Set 1: Random Number Generation](set1.md)
+* [Set 2: Failing Computations](set2.md)
+* [Set 3: Generating Permutations](set3.md)
+* [Set 4: Finding the Common Thread](set3.md)
 

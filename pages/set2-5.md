@@ -12,10 +12,12 @@ doesn't fail?
 
 Write a function addSalaries that adds two salaries by person name.
 
-    addSalaries :: [(String, Integer)] -> String -> String -> Integer
+    addSalaries :: [(String, Integer)] -> String -> String -> Maybe Integer
 
 You give this function a data structure with salary info and the names of two
-people and it returns the sum of their salaries.
+people and it returns the sum of their salaries.  But if you give it a name
+that is not in the list, then there is no way to add the salaries so it should
+return Nothing.
 
 Now generalize this pattern in the same way we generalized chain/link in
 exercise #10.

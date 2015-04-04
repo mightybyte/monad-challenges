@@ -1,4 +1,4 @@
-# Handling Failure
+# Failing Computations
 
 You may have noticed that MCPrelude doesn't have the Maybe type or anything
 from Data.Maybe.  That's because you're going to build it all yourself.
@@ -9,11 +9,13 @@ stuff from Prelude or Data.Maybe.  Don't do it.  Nobody is forcing you to do
 these exercises, so you should try to get the maximum possible benefit.
 **IMPORTANT**
 
-First of all, you need to define the Maybe type.  This type needs to represent
-failing values of any type, so it needs a type variable similar to what we saw
-in the Gen type alias.  But this can't be a type alias because it has two
-constructors.  Write this type yourself and get it to compile.  Once you've
-gotten it compiling, check your answer by hex decoding the following:
+First of all, you need to define the Maybe type.  It should be able to
+represent any value a, as well as the case where no a value exists.  This type
+needs to represent failing values of any type, so it needs a type variable
+similar to what we saw in the Gen type alias.  But this can't be a type alias
+because it has two constructors.  Write this type yourself and get it to
+compile.  Once you've gotten it compiling, check your answer by hex decoding
+the following:
 
     64617461204D617962652061203D204E6F7468696E67207C204A7573742061
 
