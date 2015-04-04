@@ -39,7 +39,7 @@ Play around with as many different possibilities as you can think of.
 SPEND SOME TIME WITH THIS BEFORE READING THE HINT!
 
 Play with a number of abstractions and try to find the most flexible.  After
-you've spent some time with it, look at the hint [here](3hint.md).
+you've spent some time with it, look at the hint [here](set1-3hint.md).
 
 Pass all three of these functions a seed of 1.  They'll give you three numbers
 back, the product of which is 189908109902700.
