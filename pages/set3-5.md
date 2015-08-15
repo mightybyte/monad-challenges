@@ -7,7 +7,7 @@ difficult step, so we are not going to make you figure it out yourself.  All
 the same, spend some time thinking about how you might do it.  Here is a hint
 though.  You probably noticed that allPerms has ([a] -> [b]) in its type
 signature and allPerms3 has ([a] -> [b] -> [c]) in its type signature.  When
-you are playing with this, do not try to generalize that pattern to [[a]].
+you are playing with this, do not try to generalize that pattern to `[[a]]`.
 That is not an adequate generalization because it only allows a and has no b
 or c anywhere.  Spend some time thinking about this before you continue.  But
 don't be discouraged if you can't figure it out.  This one is hard.
