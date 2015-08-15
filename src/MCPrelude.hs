@@ -24,9 +24,6 @@ module MCPrelude (
     Bool(False, True),
     (&&), (||), not, otherwise,
 
-    Either(Left, Right),
-    either,
-
     Ordering(LT, EQ, GT),
     Char, String,
 
@@ -116,7 +113,6 @@ module MCPrelude (
   ) where
 
 import Data.List
-import Data.Either
 import Data.Tuple
 
 import GHC.Base
