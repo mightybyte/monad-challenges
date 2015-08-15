@@ -50,7 +50,7 @@ for reference.
 
 ### Who did this?
 
-* Doug Beardsley
+* Doug Beardsley (with feedback and suggestions from Brent Yorgey)
 
 ### Code Template
 
