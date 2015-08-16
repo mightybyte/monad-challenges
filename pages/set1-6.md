@@ -12,9 +12,21 @@ like this:
 
 Implement this function.
 
-Now think about this function compared to repRandom from the last exercise.  The
-genTwo function takes the output of one generator and passes it to a function
-that gives us the next generator.  repRandom can be implemented using this
-pattern.  Write another version called repRandomB that uses genTwo to handle
-its state threading.
+Now look at the implementation of your repRandom function.  It probably has one
+clause handling the empty list case.  That case probably looks something like this:
 
+    repRandom [] s = ([], s)
+
+repRandom was expecting a list of generators and it's supposed to return a
+generator. Since the input list was empty it has no incoming generators to work
+with but it still has to return one. Esentially what's happening here is it has
+to construct a Gen out of thin air. It turns out that this is a really common
+pattern. So let's make a function for it. We'll call this function mkGen. It has
+to return a `Gen a`. But it has to get the a from somewhere, so that will have
+to be the argument.
+
+Implement mkGen. Try to figure out the type signature yourself, but if you need
+help here it is hex-encoded: 6D6B47656E203A3A2061202D3E2047656E2061.
+
+Now go back and look at the generalB function you wrote back in exercise #4.
+Rewrite generalB using genTwo and mkGen.

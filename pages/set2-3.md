@@ -13,14 +13,16 @@ the following type signature:
     queryGreek :: GreekData -> String -> Maybe Double
 
 Your implementation of this function should use the functions you wrote in
-exercise #8 to do the following.  First query the GreekData that is passed in,
-look up the string passed in the second argument, and retrieve the
-corresponding list of Integers.  Call this list xs.  Next calculate the
-maximum of the tail of xs.  Take the maximum and divide it by the head of the
-list.  If any of these operations along the way return Nothing, then your
-function should return Nothing.  But if everything succeeds, then return the
-final quotient.  One hint...you'll need to use the fromIntegral function to
-convert your two integers to Doubles for the final call to divMay.
+exercise #8 to do the following. First query the GreekData that is passed in,
+look up the string passed in the second argument, and retrieve the corresponding
+list of Integers. Call this list xs. Next calculate the maximum of the tail of
+xs. (Don't use any pattern matching here. Use the headMay and tailMay functions
+you wrote in the last exercise.) Take the maximum and divide it by the head of
+the list (using your divMay function). If any of these operations along the way
+return Nothing, then your function should return Nothing. But if everything
+succeeds, then return the final quotient. One hint...you'll need to use the
+fromIntegral function to convert your two integers to Doubles for the final call
+to divMay.
 
 If you thought maximumMay from the previous exercise was annoying, then you'll
 think this is REALLY annoying.  Stick with us though...there is a point.

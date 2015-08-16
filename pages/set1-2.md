@@ -3,8 +3,17 @@
 Now use the rand function to make your own function for generating random
 letters of the alphabet.  It should only generate lower case letters a-z.
 
+We supply a function in MCPrelude called toLetter.  Use the toLetter function
+to write this random letter function:
+
     randLetter :: Seed -> (Char, Seed)
 
-Now use this function to generate a random string of three letters.  When you
-rot13 this string you get the string "yes".
+Now use this function to write another function randString3 that generates a
+random string of three letters using an initial seed of 1.
+
+    randString3 :: String
+
+When you use [this site](http://www.xorbin.com/tools/sha256-hash-calculator) to
+calculate the SHA-256 hash of the output of randString3, you get
+9d475eb78d3e38085220ed6ebde9d8f7d26540bb1c8f9382479c3acd4c8c94a3.
 

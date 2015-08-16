@@ -37,7 +37,7 @@ at lookupMay.
 
 We could flip the argument order around and supply a fixed list of pairs.
 
-    flip lookupMay myPairs :: a -> Maybe b
+    flip lookupMay [] :: a -> Maybe b
 
 Bingo, this is exactly the same pattern, so we must be on to something.  If
 all of these functions fit into this pattern, how can we remove the

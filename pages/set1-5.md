@@ -15,5 +15,6 @@ composes well with other built-in list functions.  For example:
 
     repRandom (replicate 3 randLetter) (mkSeed 1)
 
-This function should generate the same three letters that you got in challenge #2.
+This function should generate the same three letters that you got from
+randString3 in challenge #2.
 

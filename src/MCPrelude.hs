@@ -97,14 +97,17 @@ module MCPrelude (
     ReadS,
     Read(readsPrec, readList),
     reads, readParen, read, lex,
+    undefined,
 
     Seed,
     mkSeed,
     rand,
+    toLetter,
 
     GreekData,
     greekDataA,
     greekDataB,
+    salaries,
     firstNames,
     lastNames,
     cardRanks,
@@ -112,6 +115,7 @@ module MCPrelude (
 
   ) where
 
+import Data.Char
 import Data.List
 import Data.Tuple
 
@@ -154,6 +158,9 @@ rand (Seed s) = (s', Seed s')
   where
     s' = (s * 16807) `mod` m
 
+toLetter :: Integer -> Char
+toLetter = chr . (ord 'a' + ) . (`mod` 26) . fromIntegral
+
 type GreekData = [(String, [Integer])]
 
 greekDataA :: GreekData
@@ -169,6 +176,12 @@ greekDataB = [ ("phi", [53, 13])
              , ("psi", [])
              , ("omega", [6, 82, 144])
              ]
+
+salaries :: [(String, Integer)]
+salaries = [ ("alice", 105000)
+           , ("bob", 90000)
+           , ("carol", 85000)
+           ]
 
 firstNames :: [String]
 firstNames = ["alice", "bob", "carol", "dave"]
