@@ -61,7 +61,6 @@ module MCPrelude (
 
     -- ** Miscellaneous functions
     id, const, (.), flip, ($), until,
-    seq, ($!),
 
     -- * List operations
     map, (++), filter,
@@ -119,7 +118,7 @@ import Data.Char
 import Data.List
 import Data.Tuple
 
-import GHC.Base
+import GHC.Base hiding (foldr)
 import Text.Read
 import GHC.Enum
 import GHC.Num

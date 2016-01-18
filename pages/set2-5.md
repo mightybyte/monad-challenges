@@ -20,7 +20,7 @@ that is not in the list, then there is no way to add the salaries so it should
 return Nothing.
 
 Now generalize this pattern in the same way we generalized chain/link in
-exercise #10.
+the previous exercise.
 
 Call this function yLink...because it is kind of like a y-shaped chain/link.
 Coming up with the right type signature is often the tricky part.  Take a look
@@ -35,3 +35,14 @@ is the hex encoded version of what we are looking for.
 Once you have the type signature implement yLink using link (no cases).  Once
 you have that working, implement addSalaries again as addSalaries2 using yLink
 this time.
+
+Notice that in both addSalaries and yLink you have to construct a Maybe out of
+thin air kind of like we did in Set 1 with mkGen. Write a similar function for
+Maybes with this type signature.
+
+    mkMaybe :: a -> Maybe a
+
+Now use this function in your addSalaries and yLink functions. You'll probably
+find this easier for Maybe than it was for Gen. It may not seem worthwhile, but
+this is all about finding common patterns. This pattern has come up twice in two
+different contexts now, so it's probably worth paying attention to.

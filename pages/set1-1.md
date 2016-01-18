@@ -1,6 +1,6 @@
 # Random Number Generation
 
-In the MCRand module we provide a simple random number generation function
+In MCPrelude we provide a simple random number generation function
 `rand`.  Random number generators usually rely on mutable state side effects.
 They maintain some state somewhere in memory and use that to figure out what
 "random" number to give you.  Before the function returns, it modifies the

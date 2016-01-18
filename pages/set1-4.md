@@ -25,8 +25,8 @@ have had to write if we didn't have Gen:
 
     generalPair :: (Seed -> (a, Seed)) -> (Seed -> (b, Seed)) -> (Seed -> ((a,b), Seed))
 
-Removing the unnecessary parentheses gets is this type signature, which will
-probably help you a little when implementing the function.
+Removing the unnecessary parentheses gets us this type signature, which might
+help you a little when implementing the function.
 
     generalPair :: (Seed -> (a, Seed)) -> (Seed -> (b, Seed)) -> Seed -> ((a,b), Seed)
 

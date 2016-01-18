@@ -14,14 +14,14 @@ don't be discouraged if you can't figure it out.  This one is hard.
 
 Back?  If you figured it out, congratulations.  If not, here is the hex
 encoded type signature for a function called permStep that is the
-generalization we need..
+generalization we need.
 
     7065726D53746570203A3A205B61202D3E20625D202D3E205B615D202D3E205B625D
 
 Now write that function.  There is only one possible way to do it.  If you can
 write a function that compiles, then your answer is correct.
 
-Now use the permStep function to implement allPerms3 and check that this new
-implementation has the same behavior as your previous allPerms3.  Once you do
-this it should be pretty obvious how you would use permStep to impliment
-allPerms4 and beyond.  Also notice how permStep compares to allPerms.
+Now use the permStep function to implement allPerms2 and allPerms3 and check
+that the new implementations have the same behavior as before.
+Once you do this it should be pretty obvious how you would use permStep to
+impliment allPerms4 and beyond. Also notice how permStep compares to allPerms.

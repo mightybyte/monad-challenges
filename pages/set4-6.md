@@ -1,0 +1,9 @@
+# Using the abstraction
+
+Now your Set4.hs module has fairly decent set of abstract tools all built on the
+Monad interface. Now go back through sets 1, 2, and 3 and redo them all using
+the library of functions you built up in Set4.hs. This may seem like a waste of
+time, but this will develop your familiarity with the names actually used by
+Haskell's monad library. This is the core of developing a working knowledge of
+monads. The first three sets were the motivation. Now we're getting to the real
+world use.

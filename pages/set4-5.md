@@ -1,6 +1,27 @@
-# Fitting permutations in
+# Revisiting Other Generic Functions
 
-When we constructed our Monad type class we only used the patterns seen in
-sets 1 and 2.  Now try to fit set 3 into the Monad type class as well.  You
-will need to make an instance of Monad for [].  Then figure out how to
-implement the permStep function in terms of return and bind.
+Now that we have our monad type class and an understanding of what motivated it,
+go back and rewrite the generic functions from sets 1, 2, and 3 using your monad
+type class. But since we're rewriting them generically we need to give them new
+names. Here are the functions that you should rewrite and the new names that you
+should use. From set 1:
+
+* repRandom (sequence)
+* generalB (liftM2)
+
+From set 2:
+
+* chain (=<<)
+* yLink (liftM2)
+* combine (join)
+
+From set 3:
+
+* allPerms (liftM2)
+* allPerms3 (liftM3)
+* step (ap)
+
+You only need to write liftM2 once. But instead of using Gen, Maybe, or [] you
+use m in its place with the `Monad m` type class constraint. Try to do this set
+without looking at the code you used before. Just copy all the type signatures
+and redo the work, but this time do everything in terms of return and bind.

@@ -10,16 +10,16 @@ safe versions of several common functions specified by the prelude.
     maximumMay :: Ord a => [a] -> Maybe a
     minimumMay :: Ord a => [a] -> Maybe a
 
-The functions headMay and tailMay are "safe" versions of the well known head
-and tail functions.  The former returns the first element of a list or Nothing
-if the list is empty.  The latter returns a list containing all but the first
-element of a list, or Nothing if the list is empty.  The lookupMay function
-is kind of like the lookup for a map.  Find the first tuple in the list
-where the first element is the equal to the passed in value and return the
-second element.  If there is no matching 'a', then return Nothing.  The
-divMay function should return Nothing if you're dividing by zero and result
-of the division otherwise.  maximumMay calculates the maximum of all the
-numbers in the list, but if the list is empty it returns Nothing.
+The functions headMay and tailMay are "safe" versions of the well known head and
+tail functions. The former returns the first element of a list or Nothing if the
+list is empty. The latter returns a list containing all but the first element of
+a list, or Nothing if the list is empty. The lookupMay function is kind of like
+the lookup for a map. Find the first tuple in the list where the first element
+is the equal to the passed in value and return the second element. If there is
+no matching 'a', then return Nothing. The divMay function should return Nothing
+if you're dividing by zero and the result of the division otherwise. maximumMay
+calculates the maximum of all the numbers in the list, but if the list is empty
+it returns Nothing.
 
 The maximumMay and minimumMay functions are slightly annoying.  Our restricted
 prelude may prevent you from using things that you would like to use to make

@@ -4,7 +4,7 @@ Now that you've spent some time building general abstractions for working with
 state and failing computations we want to go back through and look for
 commonalities.
 
-First, go back through all the code you wrote for Set 1, find all the
+First, go back through all the code you wrote for Set 1, Find all the
 generalized functions and copy their type signatures (not the code) into a new
 file.  You can skip the functions that solved special case exercises.  Then do
 the same thing for Set 2 and copy those type signatures into the same file.

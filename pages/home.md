@@ -37,9 +37,10 @@ the following Haskell concepts:
 * Polymorphism
 * Type classes
 
-We are not trying to teach you Haskell here.  We are trying to teach you
-monads.  If you need to learn Haskell, go work through some beginning Haskell
-materials and come back when you think you need to learn monads.
+We are not trying to teach you Haskell here. We are trying to guide you down the
+path to a fully internalized working knowledge of monads. If you need to learn
+Haskell, go work through some beginning Haskell materials and come back when you
+think you need to learn monads.
 
 ### Organizing Your Code
 

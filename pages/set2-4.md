@@ -12,7 +12,7 @@ considered unsafe anyway.)
 Bottom line...this is obviously not how we want to write our code.  There is a
 huge amount of repetition in our queryGreek function and we need to figure out how
 to get rid of it.  If you're really ambitious, stop reading now and see if you
-can figure it out.  If you can't figure it out, keep reading.
+can figure it out.  If you can't figure it out don't worry, keep reading.
 
 For a clue, let's take another look at some of the type signatures we're
 working with (removing some type class constraints for clarity).
@@ -21,12 +21,11 @@ working with (removing some type class constraints for clarity).
     tailMay :: [a] -> Maybe [a]
     maximumMay :: [a] -> Maybe a
 
-All of these functions look very similar.  What is the pattern that they all
-fit into?  Well, they all return a Maybe something.  And their parameter is
-always something else that is not a Maybe.  So how would we generalize this
-pattern?  The standard trick to generalizing things is to stick type variables
-in place of all the things that can change.  So our failure pattern looks like
-this:
+All of these functions look very similar. What is the pattern that they all fit
+into? Well, they all return a Maybe something. And their parameter is always
+something else that is not a Maybe. So how would we generalize this pattern? The
+standard trick to generalizing things is to stick type variables in place of all
+the things that can change. The pattern here looks like this:
 
     :: a -> Maybe b
 
@@ -39,7 +38,7 @@ We could flip the argument order around and supply a fixed list of pairs.
 
     flip lookupMay [] :: a -> Maybe b
 
-Bingo, this is exactly the same pattern, so we must be on to something.  If
+Bingo, this is exactly the same pattern, so maybe we're on to something.  If
 all of these functions fit into this pattern, how can we remove the
 redundancy?  Well, the problem is that the thing we are always passing to
 these functions is a Maybe.  But the functions need something that is not a
