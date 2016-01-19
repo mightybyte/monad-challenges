@@ -3,3 +3,6 @@ dist
 *.o
 solutions
 *.swp
+_site
+_cache
+hakyll/site
