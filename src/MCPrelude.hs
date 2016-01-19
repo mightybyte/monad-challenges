@@ -191,6 +191,6 @@ lastNames = ["doe", "jones", "smith"]
 cardRanks :: [Int]
 cardRanks = [2, 3, 4, 5]
 
-cardSuits :: [String]
-cardSuits = ["H", "D", "C", "S"]
+cardSuits :: [Char]
+cardSuits = ['H', 'D', 'C', 'S']
 
