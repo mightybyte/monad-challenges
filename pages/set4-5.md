@@ -1,0 +1,27 @@
+# Revisiting Other Generic Functions
+
+Now that we have our monad type class and an understanding of what motivated it,
+go back and rewrite the generic functions from sets 1, 2, and 3 using your monad
+type class. But since we're rewriting them generically we need to give them new
+names. Here are the functions that you should rewrite and the new names that you
+should use. From set 1:
+
+* repRandom (sequence)
+* generalB (liftM2)
+
+From set 2:
+
+* chain (=<<)
+* yLink (liftM2)
+* combine (join)
+
+From set 3:
+
+* allPerms (liftM2)
+* allPerms3 (liftM3)
+* step (ap)
+
+You only need to write liftM2 once. But instead of using Gen, Maybe, or [] you
+use m in its place with the `Monad m` type class constraint. Try to do this set
+without looking at the code you used before. Just copy all the type signatures
+and redo the work, but this time do everything in terms of return and bind.

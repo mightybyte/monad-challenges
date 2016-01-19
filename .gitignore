@@ -1,0 +1,5 @@
+dist
+*.hi
+*.o
+solutions
+*.swp

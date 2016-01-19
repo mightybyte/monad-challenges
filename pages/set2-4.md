@@ -1,0 +1,95 @@
+# Generalizing chains of failures
+
+If you solved challenge #9 correctly, your function has no fewer than five
+case statements.  There are five points where the computation can fail and you
+need to check all of them.  It might bring to mind null checks in C.  The
+difference is that in C the checks are optional because null is a valid
+pointer value.  So in Haskell it actually looks worse than in C because
+Haskell forces you to check everything.  (There are ways around it, but we
+don't want you to use those right now.  And those methods are widely
+considered unsafe anyway.)  
+
+Bottom line...this is obviously not how we want to write our code.  There is a
+huge amount of repetition in our queryGreek function and we need to figure out how
+to get rid of it.  If you're really ambitious, stop reading now and see if you
+can figure it out.  If you can't figure it out don't worry, keep reading.
+
+For a clue, let's take another look at some of the type signatures we're
+working with (removing some type class constraints for clarity).
+
+    headMay :: [a] -> Maybe a
+    tailMay :: [a] -> Maybe [a]
+    maximumMay :: [a] -> Maybe a
+
+All of these functions look very similar. What is the pattern that they all fit
+into? Well, they all return a Maybe something. And their parameter is always
+something else that is not a Maybe. So how would we generalize this pattern? The
+standard trick to generalizing things is to stick type variables in place of all
+the things that can change. The pattern here looks like this:
+
+    :: a -> Maybe b
+
+Now let's see how the other functions fit into this pattern.  First let's look
+at lookupMay.
+
+    lookupMay :: a -> [(a,b)] -> Maybe b
+
+We could flip the argument order around and supply a fixed list of pairs.
+
+    flip lookupMay [] :: a -> Maybe b
+
+Bingo, this is exactly the same pattern, so maybe we're on to something.  If
+all of these functions fit into this pattern, how can we remove the
+redundancy?  Well, the problem is that the thing we are always passing to
+these functions is a Maybe.  But the functions need something that is not a
+Maybe.  It sounds like we need a linking function that does this for us.  But
+what will this function look like?  Well, the first thing that it needs is a
+function that fits the above pattern.  So let's start out with a partial type
+signature.
+
+    chain :: (a -> Maybe b) -> ...
+
+Ok, now our chain function has the function that it needs to pass something to.
+But what does it need next?  Well, there are two ways to think about this.
+One way is to think of chain as a function that takes one function and
+transforms it into another function.  Our problem in queryGreek was that we always
+had a `Maybe a` instead of an `a`.  So maybe that suggests what the rest of
+this function should be...
+
+    chain :: (a -> Maybe b) -> (Maybe a -> Maybe b)
+
+The other way of thinking about it is what kind of data we had to work with.
+At every step of the way in queryGreek we had a `Maybe a`.  So maybe the next
+argument to chain should be that.
+
+    chain :: (a -> Maybe b) -> Maybe a -> ...
+
+When we think of it this way, we can view chain as a function that strips off
+the `Maybe` from the `a` and passes it to the function.  If it does that, then
+what will the return type be?  Well, it will be whatever the first function
+returned...in this case a `Maybe b`.
+
+    chain :: (a -> Maybe b) -> Maybe a -> Maybe b
+
+If you know the associativity of -> you'll know that this is exactly the same
+as the first type signature we had for chain (minus a set of parenthesis).
+
+With that long winded explanation, we get to your task for this challenge.
+Implement the function chain.  Then implement one more function that is the
+flipped version of chain:
+
+    link :: Maybe a -> (a -> Maybe b) -> Maybe b
+
+After you do that, implement this function using your link function.  (You can
+also do it with chain, but link tends to facilitate a more convenient style.)
+
+    queryGreek2 :: GreekData -> String -> Maybe Double
+
+This function should have the exact same behavior as queryGreek from the
+previous exercise.
+
+Writing queryGreek2 will probably be more difficult than writing chain.  There
+should be no case statements in queryGreek2--only calls to link or chain.
+Once you have it working, play around with other syntax possibilities and see
+if you can get it to look nice.  Hint: lambdas are your friend.
+

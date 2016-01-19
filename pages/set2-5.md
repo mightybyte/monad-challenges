@@ -1,0 +1,48 @@
+# Chaining variations
+
+Our division function returned a Maybe because there is a case when it can't
+give a meaningful answer.  But what if we were using a different operator that
+doesn't fail?
+
+    salaries :: [(String, Integer)]
+    salaries = [ ("alice", 105000)
+               , ("bob", 90000)
+               , ("carol", 85000)
+               ]
+
+Write a function addSalaries that adds two salaries by person name.
+
+    addSalaries :: [(String, Integer)] -> String -> String -> Maybe Integer
+
+You give this function a data structure with salary info and the names of two
+people and it returns the sum of their salaries.  But if you give it a name
+that is not in the list, then there is no way to add the salaries so it should
+return Nothing.
+
+Now generalize this pattern in the same way we generalized chain/link in
+the previous exercise.
+
+Call this function yLink...because it is kind of like a y-shaped chain/link.
+Coming up with the right type signature is often the tricky part.  Take a look
+at how we came up with the chain type signature in the last exercise and see
+if you can came up with yLink's type signature.  Make a serious effort here.
+
+If you were not able to come up with a good generalized type signature, here
+is the hex encoded version of what we are looking for.
+
+    794C696E6B203A3A202861202D3E2062202D3E206329202D3E204D617962652061202D3E204D617962652062202D3E204D617962652063
+
+Once you have the type signature implement yLink using link (no cases).  Once
+you have that working, implement addSalaries again as addSalaries2 using yLink
+this time.
+
+Notice that in both addSalaries and yLink you have to construct a Maybe out of
+thin air kind of like we did in Set 1 with mkGen. Write a similar function for
+Maybes with this type signature.
+
+    mkMaybe :: a -> Maybe a
+
+Now use this function in your addSalaries and yLink functions. You'll probably
+find this easier for Maybe than it was for Gen. It may not seem worthwhile, but
+this is all about finding common patterns. This pattern has come up twice in two
+different contexts now, so it's probably worth paying attention to.

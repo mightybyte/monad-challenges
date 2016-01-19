@@ -1,0 +1,28 @@
+# Random Number Generation
+
+In MCPrelude we provide a simple random number generation function
+`rand`.  Random number generators usually rely on mutable state side effects.
+They maintain some state somewhere in memory and use that to figure out what
+"random" number to give you.  Before the function returns, it modifies the
+mutable state so that the next time you call the function you'll get a
+different number.  Haskell is a pure functional programming language and
+because our custom prelude hides Haskell's mechanisms for dealing with side
+effects, we can't build a random number generator that way.  Our random number
+generator has to have everything it needs passed in and it has to return
+everything it modifies.  Therefore, it has this type signature:
+
+    rand :: Seed -> (Integer, Seed)
+
+You can construct seeds with the mkSeed function.
+
+    mkSeed :: Integer -> Seed
+
+Make a function that gives you the first five random numbers starting with a
+seed of (mkSeed 1).  Call it:
+
+    fiveRands :: [Integer]
+
+For now don't try to do anything fancy.  Just implement it in the most
+straightforward way that comes to mind.  To check your answers, the product of
+these numbers is 8681089573064486461641871805074254223660.
+

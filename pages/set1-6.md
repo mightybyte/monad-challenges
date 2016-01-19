@@ -1,0 +1,29 @@
+# Threading the random number state
+
+In the previous exercise we wrote something that handled the threading of state
+through a list of generators.  A simpler idea is to have a function that does
+one step of two generators and the necessary state threading.  Now write a
+function called genTwo that does this.  Its first argument will be a
+generator.  Its second argument will be a function that takes the result of
+the first generator and returns a second generator.  The type signature looks
+like this:
+
+    genTwo :: Gen a -> (a -> Gen b) -> Gen b
+
+Implement this function.
+
+Now look at the implementation of your repRandom function.  It probably has one
+clause handling the empty list case.  That case probably looks something like this:
+
+    repRandom [] s = ([], s)
+
+repRandom was expecting a list of generators and it's supposed to return a
+generator. In the empty list case it has no incoming generators to work with but
+it still has to return one. Esentially what's happening here is it has to
+construct a Gen out of thin air. It turns out that this is a really common
+pattern. So let's make a function for it. We'll call this function mkGen. It has
+to return a `Gen a`. But it has to get the a from somewhere, so that will have
+to be the argument.
+
+Implement mkGen. Try to figure out the type signature yourself, but if you need
+help here it is hex-encoded: 6D6B47656E203A3A2061202D3E2047656E2061.

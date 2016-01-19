@@ -1,0 +1,37 @@
+# Failing Computations
+
+You may have noticed that MCPrelude doesn't have the Maybe type or anything
+from Data.Maybe.  That's because you're going to build it all yourself.
+
+**IMPORTANT**
+Again, it is imperative that you DO NOT CHEAT.  Don't look at any of the Maybe
+stuff from Prelude or Data.Maybe.  Don't do it.  Nobody is forcing you to do
+these exercises, so you should try to get the maximum possible benefit.
+**IMPORTANT**
+
+First of all, you need to define the Maybe type.  It should be able to
+represent any value a, as well as the case where no a value exists.  This type
+needs to represent failing values of any type, so it needs a type variable
+similar to what we saw in the Gen type alias.  But this can't be a type alias
+because it has two constructors.  Write this type yourself and get it to
+compile.  Once you've gotten it compiling, check your answer by hex decoding
+the following:
+
+    64617461204D617962652061203D204E6F7468696E67207C204A7573742061
+
+You should use this definition and names going forward.  We just wanted you to
+work on it yourself first.
+
+Then for convenience write a Show instance for this new type.
+
+    instance Show a => Show (Maybe a) where
+
+If you're having trouble with this, here is the hex encoded instance.
+
+    202073686F77204E6F7468696E67203D20224E6F7468696E6722DA202073686F7720284A757374206129203D20224A7573742022202B2B2073686F772061
+
+On the other hand, if writing this instance was too difficult, it might be
+good to go study some more introductory Haskell materials before continuing
+here.
+
+
