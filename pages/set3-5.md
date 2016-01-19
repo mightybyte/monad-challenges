@@ -22,6 +22,6 @@ Now write that function.  There is only one possible way to do it.  If you can
 write a function that compiles, then your answer is correct.
 
 Now use the permStep function to implement allPerms2 and allPerms3 and check
-that the new implementations have the same behavior as before.
-Once you do this it should be pretty obvious how you would use permStep to
-impliment allPerms4 and beyond. Also notice how permStep compares to allPerms.
+that the new implementations have the same behavior as before. Once you do this
+it should be pretty obvious how you would use permStep to impliment allPerms4
+and beyond. Also notice how permStep compares to allPerms.
