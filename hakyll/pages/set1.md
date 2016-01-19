@@ -10,7 +10,7 @@ and try to absorb the ideas and patterns.
 
 1. [Random number generation](ex1-1.html)
 1. [Random character generation](ex1-2.html)
-1. [Combining two random generators](ex1-3.html)
+1. [More generators](ex1-3.html)
 1. [Generalizing random pairs](ex1-4.html)
 1. [Generalizing lists of generators](ex1-5.html)
-1. [Generalizing pairs even more](ex1-6.html)
+1. [Threading the random number state](ex1-6.html)
