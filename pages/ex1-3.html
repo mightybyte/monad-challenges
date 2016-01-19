@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>The Monad Challenges - The Monad Challenges</title>
+
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+    <link rel="stylesheet" href="../stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">The Monad Challenges</h1>
+        <p class="header">A set of challenges for jump starting your understanding of monads.</p>
+
+        <h1 class="header">Outline</h1>
+
+        
+          <p><a href="../pages/set1.html">Set 1: Random Numbers</a></p>
+        
+          <p><a href="../pages/set2.html">Set 2: Failing Computations</a></p>
+        
+          <p><a href="../pages/set3.html">Set 3: Permutations</a></p>
+        
+          <p><a href="../pages/set4.html">Set 4: Common Abstraction</a></p>
+        
+          <p><a href="../pages/set5.html">Set 5: Do Notation</a></p>
+        
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/mightybyte/monad-challenges/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/mightybyte/monad-challenges/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/mightybyte/monad-challenges">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/mightybyte">mightybyte</a></p>
+
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </header>
+      <section>
+        <h1>More Generators</h1>
+
+        <p>Now write a few more functions to generate different subsets of random numbers. But first, we need to generalize a bit. If we look at the type signatures for rand and randLetter, what are the commonalities?</p>
+<pre><code>rand :: Seed -&gt; (Integer, Seed)
+randLetter :: Seed -&gt; (Char, Seed)</code></pre>
+<p>Create a type alias called Gen that can be used to capture the common pattern. The key point here is that they use two different types, so you will have to introduce a type parameter. Create a type alias that allows you to redefine these two functions with the following type signatures.</p>
+<pre><code>rand :: Gen Integer
+rand :: Gen Char</code></pre>
+<p>This is a relatively obvious type alias and it is pretty easy to write, but it enables a big mental leap. Now that we have this type alias we’ve jumped up a level of abstraction and higher level patterns will become more apparent. First go back and rewrite all your existing type signatures using this Gen type alias. Now write three new functions:</p>
+<pre><code>randEven :: Gen Integer -- the output of rand * 2
+randOdd :: Gen Integer -- the output of rand * 2 + 1
+randTen :: Gen Integer -- the output of rand * 10</code></pre>
+<p>Where randEven and randOdd generate only even and odd numbers respectively and randTen generates only multiples of 10. Write randEven in terms of rand, write randOdd in terms of randEven, and write randTen however you want. There’s a general pattern lurking here. If you implement all these functions the naive way like you did fiveRands, you’ll be repeating the same pattern over and over. Figure out how to exploit the common pattern and write a function called generalA that implements the pattern. All three of the above functions will also use generalA. There are a number of different ways you could abstract this. We realize that you may not pick the right abstraction. Play around with as many different possibilities as you can think of.</p>
+<p>SPEND SOME TIME WITH THIS BEFORE READING THE HINT!</p>
+<p>Play with a number of abstractions and try to find the most flexible. After you’ve spent some time with it, look at the hint <a href="ex1-3hint.html">here</a>.</p>
+<p>Pass all three of these functions a seed of 1. They’ll give you three numbers back, the product of which is 189908109902700.</p>
+
+      </section>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script><script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-72594732-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+</body></html>

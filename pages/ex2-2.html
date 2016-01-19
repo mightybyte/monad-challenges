@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>The Monad Challenges - The Monad Challenges</title>
+
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+    <link rel="stylesheet" href="../stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">The Monad Challenges</h1>
+        <p class="header">A set of challenges for jump starting your understanding of monads.</p>
+
+        <h1 class="header">Outline</h1>
+
+        
+          <p><a href="../pages/set1.html">Set 1: Random Numbers</a></p>
+        
+          <p><a href="../pages/set2.html">Set 2: Failing Computations</a></p>
+        
+          <p><a href="../pages/set3.html">Set 3: Permutations</a></p>
+        
+          <p><a href="../pages/set4.html">Set 4: Common Abstraction</a></p>
+        
+          <p><a href="../pages/set5.html">Set 5: Do Notation</a></p>
+        
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/mightybyte/monad-challenges/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/mightybyte/monad-challenges/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/mightybyte/monad-challenges">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/mightybyte">mightybyte</a></p>
+
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </header>
+      <section>
+        <h1>Build a library of things that can fail</h1>
+
+        <p>Now that you have a Maybe type, you need to use it. So now use it to build safe versions of several common functions specified by the prelude.</p>
+<pre><code>headMay :: [a] -&gt; Maybe a
+tailMay :: [a] -&gt; Maybe [a]
+lookupMay :: Eq a =&gt; a -&gt; [(a, b)] -&gt; Maybe b
+divMay :: (Eq a, Fractional a) =&gt; a -&gt; a -&gt; Maybe a
+maximumMay :: Ord a =&gt; [a] -&gt; Maybe a
+minimumMay :: Ord a =&gt; [a] -&gt; Maybe a</code></pre>
+<p>The functions headMay and tailMay are “safe” versions of the well known head and tail functions. The former returns the first element of a list or Nothing if the list is empty. The latter returns a list containing all but the first element of a list, or Nothing if the list is empty. The lookupMay function is kind of like the lookup for a map. Find the first tuple in the list where the first element is the equal to the passed in value and return the second element. If there is no matching ‘a’, then return Nothing. The divMay function should return Nothing if you’re dividing by zero and the result of the division otherwise. maximumMay calculates the maximum of all the numbers in the list, but if the list is empty it returns Nothing.</p>
+<p>The maximumMay and minimumMay functions are slightly annoying. Our restricted prelude may prevent you from using things that you would like to use to make your life easier here. This is intentional foreshadowing of things to come. Just bite the bullet and write the function. It’s only 7 short lines including the type signature.</p>
+
+      </section>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script><script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-72594732-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+</body></html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>The Monad Challenges - The Monad Challenges</title>
+
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+    <link rel="stylesheet" href="../stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">The Monad Challenges</h1>
+        <p class="header">A set of challenges for jump starting your understanding of monads.</p>
+
+        <h1 class="header">Outline</h1>
+
+        
+          <p><a href="../pages/set1.html">Set 1: Random Numbers</a></p>
+        
+          <p><a href="../pages/set2.html">Set 2: Failing Computations</a></p>
+        
+          <p><a href="../pages/set3.html">Set 3: Permutations</a></p>
+        
+          <p><a href="../pages/set4.html">Set 4: Common Abstraction</a></p>
+        
+          <p><a href="../pages/set5.html">Set 5: Do Notation</a></p>
+        
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/mightybyte/monad-challenges/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/mightybyte/monad-challenges/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/mightybyte/monad-challenges">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/mightybyte">mightybyte</a></p>
+
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </header>
+      <section>
+        <h1>Generalizing Random Pairs</h1>
+
+        <p>Use the provided rand function and your randLetter function to make a function that generates a random pair of a character and an integer.</p>
+<pre><code>randPair :: Gen (Char, Integer)</code></pre>
+<p>Generate the letter first, then the number. When you give this function (Seed 1) it gives you the random pair (‘l’,282475249).</p>
+<p>Here we’re starting to see the Gen type alias pay off. Without Gen, the type would have been:</p>
+<pre><code>randPair :: Seed -&gt; ((Char, Integer), Seed)</code></pre>
+<p>Still understandable, but the nested tuples are starting to obscure things slightly.</p>
+<p>Now generalize the above function.</p>
+<pre><code>generalPair :: Gen a -&gt; Gen b -&gt; Gen (a,b)</code></pre>
+<p>This function makes the Gen type alias almost essential. Here’s what we would have had to write if we didn’t have Gen:</p>
+<pre><code>generalPair :: (Seed -&gt; (a, Seed)) -&gt; (Seed -&gt; (b, Seed)) -&gt; (Seed -&gt; ((a,b), Seed))</code></pre>
+<p>Removing the unnecessary parentheses gets us this type signature, which might help you a little when implementing the function.</p>
+<pre><code>generalPair :: (Seed -&gt; (a, Seed)) -&gt; (Seed -&gt; (b, Seed)) -&gt; Seed -&gt; ((a,b), Seed)</code></pre>
+<p>Test this generalized function by comparing its output to what you got from randPair.</p>
+<h2 id="generalizing-pairs-even-more">Generalizing Pairs Even More</h2>
+<p>This generalPair function can be generalized even more. Instead of always constructing pairs, you should be able to have a generalization that can construct anything. All you need to do is pass in a function that does the constructing. Call this even more generalized function generalB. Once you have it implemented, write a new generalPair2 function in terms of generalB.</p>
+
+      </section>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script><script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-72594732-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+</body></html>
