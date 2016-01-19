@@ -50,7 +50,7 @@
 randLetter :: Seed -&gt; (Char, Seed)</code></pre>
 <p>Create a type alias called Gen that can be used to capture the common pattern. The key point here is that they use two different types, so you will have to introduce a type parameter. Create a type alias that allows you to redefine these two functions with the following type signatures.</p>
 <pre><code>rand :: Gen Integer
-rand :: Gen Char</code></pre>
+randLetter :: Gen Char</code></pre>
 <p>This is a relatively obvious type alias and it is pretty easy to write, but it enables a big mental leap. Now that we have this type alias we’ve jumped up a level of abstraction and higher level patterns will become more apparent. First go back and rewrite all your existing type signatures using this Gen type alias. Now write three new functions:</p>
 <pre><code>randEven :: Gen Integer -- the output of rand * 2
 randOdd :: Gen Integer -- the output of rand * 2 + 1
