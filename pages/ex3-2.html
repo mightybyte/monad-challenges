@@ -48,9 +48,9 @@
         <p>We can use the allPairs function to do things like generate poker hands. In MCPrelude we have defined two lists called <code>cardRanks</code> and <code>cardSuits</code>. Try calling your allPairs function on these:</p>
 <pre><code>allPairs cardRanks cardSuits == [(2,&quot;H&quot;),(2,&quot;D&quot;),(2,&quot;C&quot;),(2,&quot;S&quot;),(3,&quot;H&quot;),(3,&quot;D&quot;),(3,&quot;C&quot;),(3,&quot;S&quot;),(4,&quot;H&quot;),(4,&quot;D&quot;),(4,&quot;C&quot;),(4,&quot;S&quot;),(5,&quot;H&quot;),(5,&quot;D&quot;),(5,&quot;C&quot;),(5,&quot;S&quot;)]</code></pre>
 <p>But this isn’t a very nice representation. We want a more concise representation of the card to show our user. If you were writing a real poker-related program, instead of using a tuple you would probably create a data type Card. Do that now and then write a Show instance for it that returns the more concise representation “2H”, “2D”, etc.</p>
-<pre><code>show (Card 2 'h') == &quot;2h&quot;</code></pre>
+<pre><code>show (Card 2 "h") == &quot;2h&quot;</code></pre>
 <p>Now create a new function allCards that does the same thing as your allPairs function but uses your new Card data type instead. It should have the following type signature:</p>
-<pre><code>allCards :: [Int] -&gt; [Char] -&gt; [Card]</code></pre>
+<pre><code>allCards :: [Int] -&gt; [String] -&gt; [Card]</code></pre>
 <p>This function should do the same thing as allPairs, but with more concise output. When you write this function, don’t implement it using your previous allPairs function. Rewrite it.</p>
 <pre><code>allCards cardRanks cardSuits == [2H,2D,2C,2S,3H,3D,3C,3S,4H,4D,4C,4S,5H,5D,5C,5S]</code></pre>
 
