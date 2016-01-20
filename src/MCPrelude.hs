@@ -126,6 +126,8 @@ import GHC.Real
 import GHC.Float
 import GHC.Show
 
+import Prelude (undefined)
+
 infixr 0 $!
 
 -- -----------------------------------------------------------------------------
