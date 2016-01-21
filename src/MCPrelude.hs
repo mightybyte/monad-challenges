@@ -119,12 +119,13 @@ import Data.List
 import Data.Tuple
 
 import GHC.Base hiding (foldr)
-import Text.Read
 import GHC.Enum
 import GHC.Num
 import GHC.Real
 import GHC.Float
 import GHC.Show
+import Prelude (undefined)
+import Text.Read
 
 infixr 0 $!
 
