@@ -45,7 +45,7 @@
       <section>
         <h1>Generalizing chains of failures</h1>
 
-        <p>If you solved challenge #9 correctly, your function has no fewer than five case expressions. There are five points where the computation can fail and you need to check all of them. It might bring to mind null checks in C. The difference is that in C the checks are optional because null is a valid pointer value. So in Haskell it actually looks worse than in C because Haskell forces you to check everything. (There are ways around it, but we don’t want you to use those right now. And those methods are widely considered unsafe anyway.)</p>
+        <p>If you solved the last challenge correctly, your function has no fewer than four case expressions. There are four points where the computation can fail and you need to check all of them. It might bring to mind null checks in C. The difference is that in C the checks are optional because null is a valid pointer value. So in Haskell it actually looks worse than in C because Haskell forces you to check everything. (There are ways around it, but we don’t want you to use those right now. And those methods are widely considered unsafe anyway.)</p>
 <p>Bottom line…this is obviously not how we want to write our code. There is a huge amount of repetition in our queryGreek function and we need to figure out how to get rid of it. If you’re really ambitious, stop reading now and see if you can figure it out. If you can’t figure it out don’t worry, keep reading.</p>
 <p>For a clue, let’s take another look at some of the type signatures we’re working with (removing some type class constraints for clarity).</p>
 <pre><code>headMay :: [a] -&gt; Maybe a
