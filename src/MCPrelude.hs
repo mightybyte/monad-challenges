@@ -27,6 +27,8 @@ module MCPrelude (
     Ordering(LT, EQ, GT),
     Char, String,
 
+    ifThenElse,
+
     -- *** Tuples
     fst, snd, curry, uncurry,
 
@@ -128,6 +130,10 @@ import Prelude (undefined)
 import Text.Read
 
 infixr 0 $!
+
+ifThenElse :: Bool -> a -> a -> a
+ifThenElse True a _ = a
+ifThenElse False _ a = a
 
 -- -----------------------------------------------------------------------------
 -- Miscellaneous functions
