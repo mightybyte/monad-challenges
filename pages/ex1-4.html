@@ -59,7 +59,7 @@
 <pre><code>generalPair :: (Seed -&gt; (a, Seed)) -&gt; (Seed -&gt; (b, Seed)) -&gt; Seed -&gt; ((a,b), Seed)</code></pre>
 <p>Test this generalized function by comparing its output to what you got from randPair.</p>
 <h2 id="generalizing-pairs-even-more">Generalizing Pairs Even More</h2>
-<p>This generalPair function can be generalized even more. Instead of always constructing pairs, you should be able to have a generalization that can construct anything. Your result shouldn’t be fixed to <code>Gen (a,b)</code>. It should also be able to be <code>Gen String</code>, <code>Gen Polynomial</code>, or <code>Gen BlogPost</code>. All you need to do is pass in a function that does the constructing. Call this even more generalized function generalB. Once you have it implemented, write a new generalPair2 function in terms of generalB.</p>
+<p>This generalPair function can be generalized even more. Instead of always constructing pairs, you should be able to have a generalization that can construct anything. Your result shouldn’t be fixed to <code>Gen (a,b)</code>. It should also be able to be <code>Gen String</code>, <code>Gen Polynomial</code>, or <code>Gen BlogPost</code>. All you need to do is pass in a function that does the constructing with two inputs. Call this even more generalized function generalB. Once you have it implemented, write a new <code>generalPair2</code> function in terms of <code>generalB</code>.</p>
 
       </section>
     </div>
