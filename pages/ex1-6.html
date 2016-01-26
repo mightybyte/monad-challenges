@@ -46,7 +46,7 @@
         <h1>Threading the random number state</h1>
 
         <p>In the previous exercise we wrote something that handled the threading of state through a list of generators. A simpler idea is to have a function that does one step of two generators and the necessary state threading. Now write a function called genTwo that does this. Its first argument will be a generator. Its second argument will be a function that takes the result of the first generator and returns a second generator. The type signature looks like this:</p>
-<pre><code>genTwo :: Gen a -&gt; (a -&gt; Gen b) -&gt; Gen b</code></pre>
+<pre><code>genTwo :: Gen a -&gt; (a -&gt; b) -&gt; Gen b</code></pre>
 <p>Implement this function.</p>
 <p>Now look at the implementation of your repRandom function. It probably has one clause handling the empty list case. That case probably looks something like this:</p>
 <pre><code>repRandom [] s = ([], s)</code></pre>
