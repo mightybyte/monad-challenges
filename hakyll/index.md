@@ -2,6 +2,22 @@
 title: The Monad Challenges
 ---
 
+<div class="notice">
+
+### Work In Progress
+
+There are still some rough edges here, and also a fair amount of content to be
+added. But if we waited until everything was polished before publishing, it
+would probably never happen. So feel free to make comments, suggestions, or
+contribute new content. As always, pull requests are the most desirable.
+
+Bottom line: *we need more contributors*. If you would like to help, see the
+[contribution
+guide](https://github.com/mightybyte/monad-challenges/blob/gh-pages/README.md)
+for more information.
+
+</div>
+
 ## Welcome
 
 The guys who wrote the [matasano crypto challenges](http://cryptopals.com/)
