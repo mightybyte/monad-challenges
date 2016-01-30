@@ -257,7 +257,11 @@ header {
 }
 
 p.header {
-	font-size: 16px;
+  font-size: 16px;
+}
+
+p.header.author {
+  font-size: 12px;
 }
 
 h1.header {
@@ -444,4 +448,9 @@ footer {
     font-size:12pt;
     color:#444;
   }
+}
+
+.license {
+    line-height: 1em;
+    font-size: 8pt;
 }
