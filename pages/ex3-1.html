@@ -48,7 +48,7 @@
       <section>
         <h1>Generating combinations</h1>
 
-        <p>Have you ever needed to generate all possible combinations of something? In imperative languages generating combinations always seemed like a pain to me. We are going to explore how Haskell can make combination generation easier.</p>
+        <p>Have you ever needed to generate the Cartesian product of some things? Let’s use the term combination to mean an element from the Cartesian product. In imperative languages generating combinations always seemed like a pain to me. We are going to explore how Haskell can make combination generation easier.</p>
 <p>First, write this function:</p>
 <pre><code>allPairs :: [a] -&gt; [b] -&gt; [(a,b)]</code></pre>
 <p>This function should generate all possible pairs of items from each of the two input lists. This means it should NOT have this behavior:</p>
