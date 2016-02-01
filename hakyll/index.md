@@ -119,5 +119,5 @@ You can inspect symbols you've written just by typing them in `ghci`.
     [33614,564950498,1097816499,1969887316,140734213]
     *Set1>
 
-You can also type `:r` to reload the Set1.hs after you make code changes.
+You can also type `:r` to reload Set1.hs after you make code changes.
 (Note that the above numbers are not the correct answer for fiveRands.)
