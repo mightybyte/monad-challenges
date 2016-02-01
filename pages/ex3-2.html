@@ -25,7 +25,7 @@
         
           <p><a href="../pages/set2.html">Set 2: Failing Computations</a></p>
         
-          <p><a href="../pages/set3.html">Set 3: Permutations</a></p>
+          <p><a href="../pages/set3.html">Set 3: Combinations</a></p>
         
           <p><a href="../pages/set4.html">Set 4: Common Abstraction</a></p>
         
@@ -38,9 +38,12 @@
           <li><a class="buttons github" href="https://github.com/mightybyte/monad-challenges">View On GitHub</a></li>
         </ul>
 
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/mightybyte">mightybyte</a></p>
+        <p class="author header">This project is maintained by <a class="header name" href="https://github.com/mightybyte">mightybyte</a></p>
 
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        <p class="license">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+        </p>
+
       </header>
       <section>
         <h1>Poker hands</h1>
@@ -52,7 +55,7 @@
 <p>Now create a new function allCards that does the same thing as your allPairs function but uses your new Card data type instead. It should have the following type signature:</p>
 <pre><code>allCards :: [Int] -&gt; [String] -&gt; [Card]</code></pre>
 <p>This function should do the same thing as allPairs, but with more concise output. When you write this function, don’t implement it using your previous allPairs function. Rewrite it.</p>
-<pre><code>allCards cardRanks cardSuits == [2H,2D,2C,2S,3H,3D,3C,3S,4H,4D,4C,4S,5H,5D,5C,5S]</code></pre>
+<pre><code>show (allCards cardRanks cardSuits) == &quot;[2H,2D,2C,2S,3H,3D,3C,3S,4H,4D,4C,4S,5H,5D,5C,5S]&quot;</code></pre>
 
       </section>
     </div>

@@ -25,7 +25,7 @@
         
           <p><a href="../pages/set2.html">Set 2: Failing Computations</a></p>
         
-          <p><a href="../pages/set3.html">Set 3: Permutations</a></p>
+          <p><a href="../pages/set3.html">Set 3: Combinations</a></p>
         
           <p><a href="../pages/set4.html">Set 4: Common Abstraction</a></p>
         
@@ -38,14 +38,20 @@
           <li><a class="buttons github" href="https://github.com/mightybyte/monad-challenges">View On GitHub</a></li>
         </ul>
 
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/mightybyte">mightybyte</a></p>
+        <p class="author header">This project is maintained by <a class="header name" href="https://github.com/mightybyte">mightybyte</a></p>
 
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        <p class="license">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+        </p>
+
       </header>
       <section>
         <h1>First Generalization Hint</h1>
 
-        <p>All three of these functions are simply a call to rand followed by applying a function to the integer it returns. What you ultimately need is a function that you can pass a <code>Gen a</code> to and will transform the result.</p>
+        <p>All three of these functions are conceptually a call to rand followed by applying a function to the integer it returns. What you ultimately need is a function that you can pass a <code>Gen a</code> to and will transform the result.</p>
+<p>Be careful not to make your function too specific to rand. rand is a specific example of a <code>Gen Integer</code> but you want your function to work for other kinds of <code>Gen a</code> as well.</p>
+<p>If you are still stuck, you can view the expected type signature by hex decoding the following string: 67656E6572616C41203A3A202861202D3E206229202D3E2047656E2061202D3E2047656E2062</p>
+<p>You can decode it with <a href="http://www.convertstring.com/EncodeDecode/HexDecode">this online hex decoder</a>.</p>
 
       </section>
     </div>

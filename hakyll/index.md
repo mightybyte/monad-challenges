@@ -2,6 +2,22 @@
 title: The Monad Challenges
 ---
 
+<div class="notice">
+
+### Work In Progress
+
+There are still some rough edges here, and also a fair amount of content to be
+added. But if we waited until everything was polished before publishing, it
+would probably never happen. So feel free to make comments, suggestions, or
+contribute new content. As always, pull requests are the most desirable.
+
+Bottom line: *we need more contributors*. If you would like to help, see the
+[contribution
+guide](https://github.com/mightybyte/monad-challenges/blob/gh-pages/README.md)
+for more information.
+
+</div>
+
 ## Welcome
 
 The guys who wrote the [matasano crypto challenges](http://cryptopals.com/)
@@ -87,3 +103,21 @@ library.
 
 This makes the MCPrelude module available on your system. Now head on over to
 [Set 1](pages/set1.html) and start coding!
+
+Once you've written some code, the easiest way to test it is to use Haskell's
+REPL, `ghci`.
+
+    ghci Set1.hs
+
+You can inspect symbols you've written just by typing them in `ghci`.
+
+    $ ghci Set1.hs
+    GHCi, version 7.10.2: http://www.haskell.org/ghc/  :? for help
+    [1 of 1] Compiling Set1             ( Set1.hs, interpreted )
+    Ok, modules loaded: Set1.
+    *Set1> fiveRands
+    [33614,564950498,1097816499,1969887316,140734213]
+    *Set1>
+
+You can also type `:r` to reload Set1.hs after you make code changes.
+(Note that the above numbers are not the correct answer for fiveRands.)

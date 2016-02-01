@@ -25,7 +25,7 @@
         
           <p><a href="../pages/set2.html">Set 2: Failing Computations</a></p>
         
-          <p><a href="../pages/set3.html">Set 3: Permutations</a></p>
+          <p><a href="../pages/set3.html">Set 3: Combinations</a></p>
         
           <p><a href="../pages/set4.html">Set 4: Common Abstraction</a></p>
         
@@ -38,14 +38,17 @@
           <li><a class="buttons github" href="https://github.com/mightybyte/monad-challenges">View On GitHub</a></li>
         </ul>
 
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/mightybyte">mightybyte</a></p>
+        <p class="author header">This project is maintained by <a class="header name" href="https://github.com/mightybyte">mightybyte</a></p>
 
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        <p class="license">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+        </p>
+
       </header>
       <section>
-        <h1>Generating permutations</h1>
+        <h1>Generating combinations</h1>
 
-        <p>Have you ever needed to generate all possible permutations of something? In imperative languages generating combinations and permutations always seemed like a pain to me. We are going to explore how Haskell can make permutation generation easier.</p>
+        <p>Have you ever needed to generate the Cartesian product of some things? Let’s use the term combination to mean an element from the Cartesian product. In imperative languages generating combinations always seemed like a pain to me. We are going to explore how Haskell can make combination generation easier.</p>
 <p>First, write this function:</p>
 <pre><code>allPairs :: [a] -&gt; [b] -&gt; [(a,b)]</code></pre>
 <p>This function should generate all possible pairs of items from each of the two input lists. This means it should NOT have this behavior:</p>

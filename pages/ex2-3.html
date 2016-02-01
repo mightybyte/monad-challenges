@@ -25,7 +25,7 @@
         
           <p><a href="../pages/set2.html">Set 2: Failing Computations</a></p>
         
-          <p><a href="../pages/set3.html">Set 3: Permutations</a></p>
+          <p><a href="../pages/set3.html">Set 3: Combinations</a></p>
         
           <p><a href="../pages/set4.html">Set 4: Common Abstraction</a></p>
         
@@ -38,9 +38,12 @@
           <li><a class="buttons github" href="https://github.com/mightybyte/monad-challenges">View On GitHub</a></li>
         </ul>
 
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/mightybyte">mightybyte</a></p>
+        <p class="author header">This project is maintained by <a class="header name" href="https://github.com/mightybyte">mightybyte</a></p>
 
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        <p class="license">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+        </p>
+
       </header>
       <section>
         <h1>Chains of Failing Computations</h1>
@@ -50,8 +53,8 @@
 <p>We also provide two data structures <code>greekDataA, greekDataB :: GreekData</code> that have some sample data.</p>
 <p>Write a function to query the above data structure. Your function should have the following type signature:</p>
 <pre><code>queryGreek :: GreekData -&gt; String -&gt; Maybe Double</code></pre>
-<p>Your implementation of this function should use the functions you wrote in the previous exercise to do the following. First query the GreekData that is passed in, look up the string passed in the second argument, and retrieve the corresponding list of Integers. Call this list xs. Next calculate the maximum of the tail of xs. (Don’t use any pattern matching here. Use the headMay and tailMay functions you wrote in the last exercise.) Take the maximum and divide it by the head of the list (using your divMay function). If any of these operations along the way return Nothing, then your function should return Nothing. But if everything succeeds, then return the final quotient. One hint…you’ll need to use the fromIntegral function to convert your two integers to Doubles for the final call to divMay.</p>
-<p>If you thought maximumMay from the previous exercise was annoying, then you’ll think this is REALLY annoying. Stick with us though…there is a point. The more you feel the pain now, the more the solutions will stick in your head later.</p>
+<p>Your implementation of this function should use the functions you wrote in the previous exercise to do the following. First query the GreekData that is passed in, look up the string passed in the second argument, and retrieve the corresponding list of Integers. Call this list xs. Next calculate the maximum of the tail of xs. (Don’t use any pattern matching here. Use case expressions and the maximumMay and tailMay functions you wrote in the last exercise.) Take the maximum and divide it by the head of the list (using your headMay and divMay functions). If any of these operations along the way return Nothing, then your function should return Nothing. But if everything succeeds, then return the final quotient. One hint…you’ll need to use the fromIntegral function to convert your two integers to Doubles for the final call to divMay.</p>
+<p>You will probably find this function pretty annoying to implement. Stick with us though…there is a point. The more you feel the pain now, the more the solutions will stick in your head later.</p>
 <p>Your function should generate the following results:</p>
 <pre><code>queryGreek greekDataA &quot;alpha&quot; == Just 2.0
 queryGreek greekDataA &quot;beta&quot; == Nothing

@@ -25,7 +25,7 @@
         
           <p><a href="./pages/set2.html">Set 2: Failing Computations</a></p>
         
-          <p><a href="./pages/set3.html">Set 3: Permutations</a></p>
+          <p><a href="./pages/set3.html">Set 3: Combinations</a></p>
         
           <p><a href="./pages/set4.html">Set 4: Common Abstraction</a></p>
         
@@ -38,14 +38,22 @@
           <li><a class="buttons github" href="https://github.com/mightybyte/monad-challenges">View On GitHub</a></li>
         </ul>
 
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/mightybyte">mightybyte</a></p>
+        <p class="author header">This project is maintained by <a class="header name" href="https://github.com/mightybyte">mightybyte</a></p>
 
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        <p class="license">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+        </p>
+
       </header>
       <section>
         <h1>The Monad Challenges</h1>
 
-        <h2 id="welcome">Welcome</h2>
+        <div class="notice">
+<h3 id="work-in-progress">Work In Progress</h3>
+<p>There are still some rough edges here, and also a fair amount of content to be added. But if we waited until everything was polished before publishing, it would probably never happen. So feel free to make comments, suggestions, or contribute new content. As always, pull requests are the most desirable.</p>
+<p>Bottom line: <em>we need more contributors</em>. If you would like to help, see the <a href="https://github.com/mightybyte/monad-challenges/blob/gh-pages/README.md">contribution guide</a> for more information.</p>
+</div>
+<h2 id="welcome">Welcome</h2>
 <p>The guys who wrote the <a href="http://cryptopals.com/">matasano crypto challenges</a> realized that you cannot get a working knowledge of crypto without investing blood, sweat, and tears into playing with and attempting to break crypto. They even say, “But more people ‘know how’ to break it than can actually break it.” Their crypto challenges provide a structured way for people to make the requisite blood, sweat, and tears investment to get to a place of understanding.</p>
 <p>We believe the same is true when learning monads. Monads cannot be taught. They must be <em>discovered</em>. The problem with monad tutorials is that they are predicated on someone teaching/explaining monads. But you must explore them yourself. You will never really understand monads until you do this. The problem is that beginners do not usually know how to explore. We put together this set of challenges to show you how to do that.</p>
 <p><em>Please do NOT publish the answers to these challenges.</em> Reading answers that you did not create yourself defeats the whole purpose.</p>
@@ -84,6 +92,17 @@ import MCPrelude</code></pre>
 cd monad-challenges
 cabal install</code></pre>
 <p>This makes the MCPrelude module available on your system. Now head on over to <a href="pages/set1.html">Set 1</a> and start coding!</p>
+<p>Once you’ve written some code, the easiest way to test it is to use Haskell’s REPL, <code>ghci</code>.</p>
+<pre><code>ghci Set1.hs</code></pre>
+<p>You can inspect symbols you’ve written just by typing them in <code>ghci</code>.</p>
+<pre><code>$ ghci Set1.hs
+GHCi, version 7.10.2: http://www.haskell.org/ghc/  :? for help
+[1 of 1] Compiling Set1             ( Set1.hs, interpreted )
+Ok, modules loaded: Set1.
+*Set1&gt; fiveRands
+[33614,564950498,1097816499,1969887316,140734213]
+*Set1&gt;</code></pre>
+<p>You can also type <code>:r</code> to reload Set1.hs after you make code changes. (Note that the above numbers are not the correct answer for fiveRands.)</p>
 
       </section>
     </div>

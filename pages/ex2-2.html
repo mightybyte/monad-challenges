@@ -25,7 +25,7 @@
         
           <p><a href="../pages/set2.html">Set 2: Failing Computations</a></p>
         
-          <p><a href="../pages/set3.html">Set 3: Permutations</a></p>
+          <p><a href="../pages/set3.html">Set 3: Combinations</a></p>
         
           <p><a href="../pages/set4.html">Set 4: Common Abstraction</a></p>
         
@@ -38,9 +38,12 @@
           <li><a class="buttons github" href="https://github.com/mightybyte/monad-challenges">View On GitHub</a></li>
         </ul>
 
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/mightybyte">mightybyte</a></p>
+        <p class="author header">This project is maintained by <a class="header name" href="https://github.com/mightybyte">mightybyte</a></p>
 
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        <p class="license">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+        </p>
+
       </header>
       <section>
         <h1>Build a library of things that can fail</h1>
@@ -52,8 +55,7 @@ lookupMay :: Eq a =&gt; a -&gt; [(a, b)] -&gt; Maybe b
 divMay :: (Eq a, Fractional a) =&gt; a -&gt; a -&gt; Maybe a
 maximumMay :: Ord a =&gt; [a] -&gt; Maybe a
 minimumMay :: Ord a =&gt; [a] -&gt; Maybe a</code></pre>
-<p>The functions headMay and tailMay are “safe” versions of the well known head and tail functions. The former returns the first element of a list or Nothing if the list is empty. The latter returns a list containing all but the first element of a list, or Nothing if the list is empty. The lookupMay function is kind of like the lookup for a map. Find the first tuple in the list where the first element is the equal to the passed in value and return the second element. If there is no matching ‘a’, then return Nothing. The divMay function should return Nothing if you’re dividing by zero and the result of the division otherwise. maximumMay calculates the maximum of all the numbers in the list, but if the list is empty it returns Nothing.</p>
-<p>The maximumMay and minimumMay functions are slightly annoying. Our restricted prelude may prevent you from using things that you would like to use to make your life easier here. This is intentional foreshadowing of things to come. Just bite the bullet and write the function. It’s only 7 short lines including the type signature.</p>
+<p>The functions headMay and tailMay are “safe” versions of the well known head and tail functions. The former returns the first element of a list or Nothing if the list is empty. The latter returns a list containing all but the first element of a list, or Nothing if the list is empty. The lookupMay function is kind of like the lookup for a map. Find the first tuple in the list where the first element is the equal to the passed in value and return the second element. If there is no matching ‘a’, then return Nothing. The divMay function should return Nothing if you’re dividing by zero and the result of the division otherwise. maximumMay and minimumMay calculate the maximum and minimum respectively of all the numbers in the list, but if the list is empty they return Nothing.</p>
 
       </section>
     </div>
