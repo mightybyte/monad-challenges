@@ -51,12 +51,12 @@
         <p>Use the provided rand function and your randLetter function to make a function that generates a random pair of a character and an integer.</p>
 <pre><code>randPair :: Gen (Char, Integer)</code></pre>
 <p>Generate the letter first, then the number. When you give this function (mkSeed 1) it gives you the random pair (‘l’,282475249).</p>
-<p>Here we’re starting to see the Gen type alias pay off. Without Gen, the type would have been:</p>
+<p>Here we’re starting to see the Gen type synonym pay off. Without Gen, the type would have been:</p>
 <pre><code>randPair :: Seed -&gt; ((Char, Integer), Seed)</code></pre>
 <p>Still understandable, but the nested tuples are starting to obscure things slightly.</p>
 <p>Now generalize the above function.</p>
 <pre><code>generalPair :: Gen a -&gt; Gen b -&gt; Gen (a,b)</code></pre>
-<p>This function makes the Gen type alias almost essential. Here’s what we would have had to write if we didn’t have Gen:</p>
+<p>This function makes the Gen type synonym almost essential. Here’s what we would have had to write if we didn’t have Gen:</p>
 <pre><code>generalPair :: (Seed -&gt; (a, Seed)) -&gt; (Seed -&gt; (b, Seed)) -&gt; (Seed -&gt; ((a,b), Seed))</code></pre>
 <p>Removing the unnecessary parentheses gets us this type signature, which might help you a little when implementing the function.</p>
 <pre><code>generalPair :: (Seed -&gt; (a, Seed)) -&gt; (Seed -&gt; (b, Seed)) -&gt; Seed -&gt; ((a,b), Seed)</code></pre>

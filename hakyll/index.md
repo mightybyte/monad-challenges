@@ -50,7 +50,7 @@ the following Haskell concepts:
 * Basic syntax
 * Type signatures
 * Higher order functions
-* Type aliases
+* Type synonyms
 * newtypes
 * Polymorphism
 * Type classes
