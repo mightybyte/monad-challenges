@@ -48,7 +48,19 @@
       <section>
         <h1>Do Notation</h1>
 
-        <p>Now that you’ve spent some time using the monad abstraction, you may have seen that while it does what we need, it’s a little more verbose than we would like.</p>
+        <p>Now that you’ve spent some time using the monad abstraction, you may have seen that while it does what we need, it’s a little more verbose than we would like. This is where Haskell’s do notation comes to the rescue. When you write the following do block:</p>
+<pre><code>rule1 = do
+    foo &lt;- calcFoo
+    bar foo</code></pre>
+<p>GHC automatically desugars this to</p>
+<pre><code>rule1 = bind calcFoo (\foo -&gt; bar foo)</code></pre>
+<p>It’s important to note what this says about the type signatures of everything involved.</p>
+<pre><code>rule1 :: m b
+calcFoo :: m a
+bar :: a -&gt; m b</code></pre>
+<p>The key is that whatever m is, it must be the same for all three of these types. Also, <code>calcFoo</code> returns an <code>m a</code>, but <code>bar</code> takes a plain <code>a</code>. The bind function is responsible for “unboxing” the <code>m a</code> and passing the unboxed value to <code>bar</code>.</p>
+<p>One thing that trips a lot of people up is what to do when they don’t have a function that looks like <code>bar</code>. The version of bar they want might instead have this type <code>bar :: a -&gt; b</code> (note that here we’re specifically saying that bar’s type signature does NOT have an <code>m</code>). Figure out what to do in this situation.</p>
+<p>Note this challenge isn’t concrete. We’re dealing with more abstract types that don’t have type signatures exactly the same as the ones you’ve been working with. We could have written this challenge in a concrete way, but we think it’s important to learn how to think in more abstract terms. So for this go back to the stuff you have done before and find something that you think can be written with the do block that <code>rule1</code> has. Or better yet, make up a new function that does it using Maybe or Gen.</p>
 
       </section>
     </div>
