@@ -11,7 +11,7 @@ added. But if we waited until everything was polished before publishing, it
 would probably never happen. So feel free to make comments, suggestions, or
 contribute new content. As always, pull requests are the most desirable.
 
-Bottom line: *we need more contributors*. If you would like to help, see the
+Bottom line: **we need more contributors**. If you would like to help, see the
 [contribution
 guide](https://github.com/mightybyte/monad-challenges/blob/gh-pages/README.md)
 for more information.
