@@ -103,6 +103,13 @@ Ok, modules loaded: Set1.
 [33614,564950498,1097816499,1969887316,140734213]
 *Set1&gt;</code></pre>
 <p>You can also type <code>:r</code> to reload Set1.hs after you make code changes. (Note that the above numbers are not the correct answer for fiveRands.)</p>
+<h3 id="hex-decoding">Hex Decoding</h3>
+<p>Some challenges include hex encoded hints if you get stuck. You can put “hex decoder” into your favorite search engine to find numerous web pages that will do the decoding for you. Or you can use this bit of Haskell:</p>
+<pre><code>import Numeric (readHex)
+import Data.List.Split (chunksOf)
+
+hexDecode :: String -&gt; String
+hexDecode = map (toEnum . fst . head . readHex) . (chunksOf 2)</code></pre>
 
       </section>
     </div>

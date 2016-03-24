@@ -121,3 +121,17 @@ You can inspect symbols you've written just by typing them in `ghci`.
 
 You can also type `:r` to reload Set1.hs after you make code changes.
 (Note that the above numbers are not the correct answer for fiveRands.)
+
+### Hex Decoding
+
+Some challenges include hex encoded hints if you get stuck.  You can put "hex
+decoder" into your favorite search engine to find numerous web pages that will
+do the decoding for you.  Or you can use this bit of Haskell:
+
+    import Numeric (readHex)
+    import Data.List.Split (chunksOf)
+    
+    hexDecode :: String -> String
+    hexDecode = map (toEnum . fst . head . readHex) . (chunksOf 2)
+
+
