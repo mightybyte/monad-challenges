@@ -48,7 +48,7 @@
       <section>
         <h1>Tailprod</h1>
 
-        <p>Write a function that takes the product of the tail of a list. Use your tailMay function and the product function defined in the prelude.</p>
+        <p>Write a function that takes the product of the tail of a list. Use your tailMay function and the product function defined in the prelude. This function should return <code>Nothing</code> when passed an empty list, <code>Just 1</code> when passed a list of one element (which is what the Prelude’s product function does), and return the product of the tail for larger lists.</p>
 <pre><code>tailProd :: Num a =&gt; [a] -&gt; Maybe a</code></pre>
 <p>Now write a similar but slightly different function:</p>
 <pre><code>tailSum :: Num a =&gt; [a] -&gt; Maybe a</code></pre>

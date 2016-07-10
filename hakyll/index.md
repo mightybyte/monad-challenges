@@ -91,6 +91,10 @@ package, or the mtl package.  You're doing this to learn.  To do that you need
 to struggle with the concepts.  Don't cheat yourself out of the benefit you
 can get by working through things yourself.
 
+Many of the problem sets build on things you did in previous sets, so you may
+want to put all your code for each set into a single module to make it easier
+to reuse your previous work.  In later sets you will probably want to go back
+and look at your code for each set to find similarities.
 
 ### Getting Started
 
