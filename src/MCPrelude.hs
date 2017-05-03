@@ -129,6 +129,8 @@ import GHC.Show
 import Prelude (undefined)
 import Text.Read
 
+import Prelude (undefined)
+
 infixr 0 $!
 
 ifThenElse :: Bool -> a -> a -> a
