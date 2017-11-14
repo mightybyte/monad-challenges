@@ -46,16 +46,16 @@
 
       </header>
       <section>
-        <h1>Set 5: Do Notation</h1>
+        <h1>Do Notation –  Set 1</h1>
 
-        <p>In this set, we are going to rewrite the challenges we completed in earlier sets using do syntax. Do syntax is a common form of syntactic sugar that you will see when writing Haskell, but it is functionally equivalent to previous functions we’ve already created.</p>
-<ol style="list-style-type: decimal">
-<li><a href="ex5-1.html">Do notation</a></li>
-<li><a href="ex5-2.html">Do notation – operators</a></li>
-<li><a href="ex5-3.html">Do notation – set 1</a></li>
-<li><a href="ex5-4.html">Do notation – set 2</a></li>
-<li><a href="ex5-5.html">Do notation – set 3</a></li>
-</ol>
+        <p>First, create an instance of monad for your <code>Gen</code> new type, similar to what you did in Set 4. You will also probably want to create an <code>evalGen :: Gen a -&gt; Seed -&gt; a</code> function as well.</p>
+<p>With your monad instance, you should be able to use do syntax. Recall that in Set 1 we had a function called <code>rand :: Seed -&gt; (Integer, Seed)</code>. Create a new function <code>makeRandom :: Gen Integer</code> which wraps the rand function inside your new type.</p>
+<p>Next, use do syntax to re-create the following function from Set 1:</p>
+<pre><code>fiveRands :: Gen [Integer]</code></pre>
+<p>To check that you created this function correctly, recall that the product of the five numbers you generate when passing in a seed of <code>mkSeed 1</code> is 8681089573064486461641871805074254223660.</p>
+<p>Once that has been created correctly, create randLetter :: Gen Char and use it to create randString3 :: String, which creates a string of three random characters. If you have an initial seed of 1, when you use <a href="http://www.xorbin.com/tools/sha256-hash-calculator">this site</a> to calculate the SHA-256 hash of the output of randString3, you get 9d475eb78d3e38085220ed6ebde9d8f7d26540bb1c8f9382479c3acd4c8c94a3.</p>
+<p>Lastly, go ahead and create this general function:</p>
+<pre><code>generalPair :: Gen a -&gt; Gen b -&gt; Gen (a, b)</code></pre>
 
       </section>
     </div>
