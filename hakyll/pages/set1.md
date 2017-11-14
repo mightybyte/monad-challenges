@@ -1,5 +1,5 @@
 ---
-title: Set 1: Random Numbers
+title: "Set 1: Random Numbers"
 ---
 
 It may not seem like the problems in this set have much to do with monads at

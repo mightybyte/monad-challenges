@@ -1,5 +1,5 @@
 ---
-title: Set 5: Do Notation
+title: "Set 5: Do Notation"
 ---
 
 In this set, we are going to rewrite the challenges we completed in earlier sets using
