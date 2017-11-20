@@ -1,5 +1,5 @@
 ---
-title: Set 4: Common Abstraction
+title: "Set 4: Common Abstraction"
 ---
 
 1. [Generalizing State and Maybe](ex4-1.html)

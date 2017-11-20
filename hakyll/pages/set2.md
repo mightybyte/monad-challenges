@@ -1,5 +1,5 @@
 ---
-title: Set 2: Failing Computations
+title: "Set 2: Failing Computations"
 ---
 
 This set deals with programming patterns that arise when dealing with

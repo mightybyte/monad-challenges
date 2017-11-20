@@ -46,16 +46,25 @@
 
       </header>
       <section>
-        <h1>Set 5: Do Notation</h1>
+        <h1>Do Notation – operators</h1>
 
-        <p>In this set, we are going to rewrite the challenges we completed in earlier sets using do syntax. Do syntax is a common form of syntactic sugar that you will see when writing Haskell, but it is functionally equivalent to previous functions we’ve already created.</p>
-<ol style="list-style-type: decimal">
-<li><a href="ex5-1.html">Do notation</a></li>
-<li><a href="ex5-2.html">Do notation – operators</a></li>
-<li><a href="ex5-3.html">Do notation – set 1</a></li>
-<li><a href="ex5-4.html">Do notation – set 2</a></li>
-<li><a href="ex5-5.html">Do notation – set 3</a></li>
-</ol>
+        <p>In the last exercise, we noted that the following code:</p>
+<pre><code>rule1 = do
+    foo &lt;- calcFoo
+    bar foo</code></pre>
+<p>Is automatically de-sugared to:</p>
+<pre><code>rule1 = bind calcFoo (\foo -&gt; bar foo)</code></pre>
+<p>In Haskell, the <code>bind</code> function is conventionally written as the <code>&gt;&gt;=</code> operator, which can be written infix style like this:</p>
+<pre><code>rule1 = calcFoo &gt;&gt;= (\foo -&gt; bar foo)</code></pre>
+<p>In order for the do syntax to work correctly, we need to change our Monad class to have a &gt;&gt;= operator. Create a class like this:</p>
+<pre><code>class Monad m where
+    (&gt;&gt;=) :: m a -&gt; (a -&gt; m b) -&gt; m b
+    return :: a -&gt; m a
+
+    fail :: String -&gt; m a
+    fail = undefined</code></pre>
+<p>(Note: for historical reasons, <code>Monad</code> is required to have a <code>fail</code> function. We will not be concerning ourselves with failure here, so we just leave this as undefined. When you implement Monad for your own data types, you should only implement the &gt;&gt;= and return functions)</p>
+<p>In the next few sections, we will be rewriting the earlier exercises using do syntax.</p>
 
       </section>
     </div>

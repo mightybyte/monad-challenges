@@ -1,5 +1,5 @@
 ---
-title: Set 3: Combinations
+title: "Set 3: Combinations"
 ---
 
 In this set we are going to investigate lists.  As usual, make sure you start
