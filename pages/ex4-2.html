@@ -48,7 +48,8 @@
       <section>
         <h1>A Missed Generalization</h1>
 
-        <p>We just found an equivalence between generalB and yLink. In Set 2 we implemented yLink in terms of link without using any cases. But in Set 1 you might not have implemented generalB in terms of genTwo. Go back and look at your generalB implementation and if you didn’t write it in terms of genTwo, do that now and call it generalB2. Doing this should get rid of the state threading between generators. Also try reimplementing repRandom in terms of generalA, genTwo, and mkGen.</p>
+        <p>We just found an equivalence between generalB and yLink. In Set 2 we implemented yLink in terms of link without using any cases. But in Set 1 you might not have implemented generalB in terms of genTwo. Go back and look at your generalB implementation and if you didn’t write it in terms of genTwo, do that now and call it generalB2. Doing this should get rid of the state threading between generators.</p>
+<p>Re-implement repRandom in terms of generalA, genTwo, and mkGen. Note that by using generalA, genTwo and mkGen you should not need to have a <code>seed</code> variable in your code for repRandom anywhere.</p>
 
       </section>
     </div>

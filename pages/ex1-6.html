@@ -53,7 +53,7 @@
 <p>Implement this function.</p>
 <p>Now look at the implementation of your repRandom function. It probably has one clause handling the empty list case. That case probably looks something like this:</p>
 <pre><code>repRandom [] s = ([], s)</code></pre>
-<p>repRandom was expecting a list of generators and it’s supposed to return a generator. In the empty list case it has no incoming generators to work with but it still has to return one. Essentially what’s happening here is it has to construct a Gen out of thin air. It turns out that this is a really common pattern. So let’s make a function for it. We’ll call this function mkGen. It has to return a <code>Gen a</code>. But it has to get the a from somewhere, so that will have to be the argument.</p>
+<p>repRandom was expecting a list of generators and it’s supposed to return a generator. In the empty list case it has no incoming generators to work with but it still has to return one. Esentially what’s happening here is it has to construct a Gen out of thin air. It turns out that this is a really common pattern. So let’s make a function for it. We’ll call this function mkGen. It has to return a <code>Gen a</code>. But it has to get the a from somewhere, so that will have to be the argument.</p>
 <p>Implement mkGen. Try to figure out the type signature yourself, but if you need help here it is hex-encoded: 6D6B47656E203A3A2061202D3E2047656E2061.</p>
 <p>You can decode it with <a href="http://www.convertstring.com/EncodeDecode/HexDecode">this online hex decoder</a>.</p>
 
