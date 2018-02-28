@@ -134,8 +134,6 @@ do the decoding for you.  Or you can use this bit of Haskell:
 
     import Numeric (readHex)
     import Data.List.Split (chunksOf)
-    
+
     hexDecode :: String -> String
     hexDecode = map (toEnum . fst . head . readHex) . (chunksOf 2)
-
-

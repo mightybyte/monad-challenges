@@ -8,3 +8,5 @@ title: "Set 4: Common Abstraction"
 4. [Creating instances](ex4-4.html)
 5. [Revisiting other generic functions](ex4-5.html)
 6. [Using the abstraction](ex4-6.html)
+
+[Previous Page](ex3-5.html) - [Next Page](ex4-1.html)

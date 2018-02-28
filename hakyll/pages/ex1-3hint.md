@@ -11,3 +11,5 @@ Be careful not to make your function too specific to rand. rand is a specific ex
 If you are still stuck, you can view the expected type signature by hex decoding the following string: 67656E6572616C41203A3A202861202D3E206229202D3E2047656E2061202D3E2047656E2062
 
 You can decode it with [this online hex decoder](http://www.convertstring.com/EncodeDecode/HexDecode).
+
+[Back](ex1-3.html)
