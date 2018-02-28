@@ -12,3 +12,5 @@ the real world and Haskell can provide great tools for dealing with them.
 4. [Generalizing chains of failures](ex2-4.html)
 5. [Chaining variations](ex2-5.html)
 6. [Tailprod](ex2-6.html)
+
+[Previous Page](ex1-6.html) - [Next Page](ex2-1.html)

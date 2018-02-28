@@ -12,3 +12,5 @@ that misses the whole point of the exercise.
 3. [Generalizing pairs and cards](ex3-3.html)
 4. [Combinations of three things](ex3-4.html)
 5. [Combinations of more things](ex3-5.html)
+
+[Previous Page](ex2-6.html) - [Next Page](ex3-1.html)

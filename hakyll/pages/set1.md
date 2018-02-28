@@ -9,8 +9,10 @@ DON'T DO IT.  Later problem sets build on things you did here.  Stick with us
 and try to absorb the ideas and patterns.
 
 1. [Random number generation](ex1-1.html)
-1. [Random character generation](ex1-2.html)
-1. [More generators](ex1-3.html)
-1. [Generalizing random pairs](ex1-4.html)
-1. [Generalizing lists of generators](ex1-5.html)
-1. [Threading the random number state](ex1-6.html)
+2. [Random character generation](ex1-2.html)
+3. [More generators](ex1-3.html)
+4. [Generalizing random pairs](ex1-4.html)
+5. [Generalizing lists of generators](ex1-5.html)
+6. [Threading the random number state](ex1-6.html)
+
+[Next Page](ex1-1.html)

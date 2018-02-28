@@ -12,3 +12,4 @@ but it is functionally equivalent to previous functions we've already created.
 4. [Do notation – set 2](ex5-4.html)
 5. [Do notation – set 3](ex5-5.html)
 
+[Previous Page](ex4-6.html) - [Next Page](ex5-1.html)
