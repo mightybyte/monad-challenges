@@ -1,4 +1,5 @@
 dist
+dist-newstyle
 *.hi
 *.o
 solutions
@@ -7,3 +8,4 @@ _site
 _cache
 hakyll/site
 src/Set[1-5].hs
+.ghc.environment.*
