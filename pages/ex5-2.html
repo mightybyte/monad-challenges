@@ -56,14 +56,14 @@
 <pre><code>rule1 = bind calcFoo (\foo -&gt; bar foo)</code></pre>
 <p>In Haskell, the <code>bind</code> function is conventionally written as the <code>&gt;&gt;=</code> operator, which can be written infix style like this:</p>
 <pre><code>rule1 = calcFoo &gt;&gt;= (\foo -&gt; bar foo)</code></pre>
-<p>In order for the do syntax to work correctly, we need to change our Monad class to have a &gt;&gt;= operator. Create a class like this:</p>
+<p>In order for the do syntax to work correctly, we need to change our <code>Monad</code> class to have a <code>&gt;&gt;=</code> operator. Create a class like this:</p>
 <pre><code>class Monad m where
     (&gt;&gt;=) :: m a -&gt; (a -&gt; m b) -&gt; m b
     return :: a -&gt; m a
 
     fail :: String -&gt; m a
     fail = undefined</code></pre>
-<p>(Note: for historical reasons, <code>Monad</code> is required to have a <code>fail</code> function. We will not be concerning ourselves with failure here, so we just leave this as undefined. When you implement Monad for your own data types, you should only implement the &gt;&gt;= and return functions)</p>
+<p>(Note: for historical reasons, <code>Monad</code> is required to have a <code>fail</code> function. We will not be concerning ourselves with failure here, so we just leave this as undefined. When you implement <code>Monad</code> for your own data types, you should only implement the <code>&gt;&gt;=</code> and <code>return</code> functions)</p>
 <p>In the next few sections, we will be rewriting the earlier exercises using do syntax.</p>
 <p><a href="ex5-1.html">Previous Page</a> - <a href="ex5-3.html">Next Page</a></p>
 

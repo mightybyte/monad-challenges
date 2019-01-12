@@ -48,7 +48,7 @@
       <section>
         <h1>Do Notation –  Set 2</h1>
 
-        <p>As with the previous set, you will want to create a Monad instance for your Maybe data type.</p>
+        <p>As with the previous set, you will want to create a <code>Monad</code> instance for your <code>Maybe data</code> type.</p>
 <p>Once that is accomplished, rewrite the following functions using do syntax:</p>
 <pre><code>queryGreek :: GreekData -&gt; String -&gt; Maybe Double
 addSalaries :: [(String, Integer)] -&gt; String -&gt; String -&gt; Maybe Integer
@@ -56,7 +56,7 @@ tailProd :: Num a =&gt; [a] -&gt; Maybe a
 tailSum :: Num a =&gt; [a] -&gt; Maybe a
 tailMax :: Ord a =&gt; [a] -&gt; Maybe a</code></pre>
 <p>You should import Set2 so that you can use the helper functions you wrote in that set.</p>
-<p>You can test queryGreek with the following assertions:</p>
+<p>You can test <code>queryGreek</code> with the following assertions:</p>
 <pre><code>queryGreek greekDataA &quot;alpha&quot; == Just 2.0
 queryGreek greekDataA &quot;beta&quot; == Nothing
 queryGreek greekDataA &quot;gamma&quot; == Just 3.3333333333333335

@@ -49,32 +49,32 @@
         <h1>Generalizing chains of failures</h1>
 
         <p>If you solved the last challenge correctly, your function has no fewer than three case expressions. There are four points where the computation can fail and you need to check all of them, but two of them fail or succeed together. It might bring to mind null checks in C. The difference is that in C the checks are optional because null is a valid pointer value. So in Haskell it actually looks worse than in C because Haskell forces you to check everything. (There are ways around it, but we don’t want you to use those right now. And those methods are widely considered unsafe anyway.)</p>
-<p>Bottom line…this is obviously not how we want to write our code. There is a huge amount of repetition in our queryGreek function and we need to figure out how to get rid of it. If you’re really ambitious, stop reading now and see if you can figure it out. If you can’t figure it out don’t worry, keep reading.</p>
+<p>Bottom line…this is obviously not how we want to write our code. There is a huge amount of repetition in our <code>queryGreek</code> function and we need to figure out how to get rid of it. If you’re really ambitious, stop reading now and see if you can figure it out. If you can’t figure it out don’t worry, keep reading.</p>
 <p>For a clue, let’s take another look at some of the type signatures we’re working with (removing some type class constraints for clarity).</p>
 <pre><code>headMay :: [a] -&gt; Maybe a
 tailMay :: [a] -&gt; Maybe [a]
 maximumMay :: [a] -&gt; Maybe a</code></pre>
-<p>All of these functions look very similar. What is the pattern that they all fit into? Well, they all return a Maybe something. And their parameter is always something else that is not a Maybe. So how would we generalize this pattern? The standard trick to generalizing things is to stick type variables in place of all the things that can change. The pattern here looks like this:</p>
+<p>All of these functions look very similar. What is the pattern that they all fit into? Well, they all return a <code>Maybe something</code>. And their parameter is always something else that is not a <code>Maybe</code>. So how would we generalize this pattern? The standard trick to generalizing things is to stick type variables in place of all the things that can change. The pattern here looks like this:</p>
 <pre><code>:: a -&gt; Maybe b</code></pre>
-<p>Now let’s see how the other functions fit into this pattern. First let’s look at lookupMay.</p>
+<p>Now let’s see how the other functions fit into this pattern. First let’s look at <code>lookupMay</code>.</p>
 <pre><code>lookupMay :: a -&gt; [(a,b)] -&gt; Maybe b</code></pre>
 <p>We could flip the argument order around and supply a fixed list of pairs.</p>
 <pre><code>flip lookupMay [] :: a -&gt; Maybe b</code></pre>
-<p>Bingo, this is exactly the same pattern, so maybe we’re on to something. If all of these functions fit into this pattern, how can we remove the redundancy? Well, the problem is that the thing we are always passing to these functions is a Maybe. But the functions need something that is not a Maybe. It sounds like we need a linking function that does this for us. But what will this function look like? Well, the first thing that it needs is a function that fits the above pattern. So let’s start out with a partial type signature.</p>
+<p>Bingo, this is exactly the same pattern, so maybe we’re on to something. If all of these functions fit into this pattern, how can we remove the redundancy? Well, the problem is that the thing we are always passing to these functions is a <code>Maybe</code>. But the functions need something that is not a <code>Maybe</code>. It sounds like we need a linking function that does this for us. But what will this function look like? Well, the first thing that it needs is a function that fits the above pattern. So let’s start out with a partial type signature.</p>
 <pre><code>chain :: (a -&gt; Maybe b) -&gt; ...</code></pre>
-<p>Ok, now our chain function has the function that it needs to pass something to. But what does it need next? Well, there are two ways to think about this. One way is to think of chain as a function that takes one function and transforms it into another function. Our problem in queryGreek was that we always had a <code>Maybe a</code> instead of an <code>a</code>. So maybe that suggests what the rest of this function should be…</p>
+<p>Ok, now our chain function has the function that it needs to pass something to. But what does it need next? Well, there are two ways to think about this. One way is to think of <code>chain</code> as a function that takes one function and transforms it into another function. Our problem in <code>queryGreek</code> was that we always had a <code>Maybe a</code> instead of an <code>a</code>. So maybe that suggests what the rest of this function should be…</p>
 <pre><code>chain :: (a -&gt; Maybe b) -&gt; (Maybe a -&gt; Maybe b)</code></pre>
-<p>The other way of thinking about it is what kind of data we had to work with. At every step of the way in queryGreek we had a <code>Maybe a</code>. So maybe the next argument to chain should be that.</p>
+<p>The other way of thinking about it is what kind of data we had to work with. At every step of the way in <code>queryGreek</code> we had a <code>Maybe a</code>. So maybe the next argument to <code>chain</code> should be that.</p>
 <pre><code>chain :: (a -&gt; Maybe b) -&gt; Maybe a -&gt; ...</code></pre>
-<p>When we think of it this way, we can view chain as a function that strips off the <code>Maybe</code> from the <code>a</code> and passes it to the function. If it does that, then what will the return type be? Well, it will be whatever the first function returned…in this case a <code>Maybe b</code>.</p>
+<p>When we think of it this way, we can view <code>chain</code> as a function that strips off the <code>Maybe</code> from the <code>a</code> and passes it to the function. If it does that, then what will the return type be? Well, it will be whatever the first function returned…in this case a <code>Maybe b</code>.</p>
 <pre><code>chain :: (a -&gt; Maybe b) -&gt; Maybe a -&gt; Maybe b</code></pre>
-<p>If you know the associativity of -&gt; you’ll know that this is exactly the same as the first type signature we had for chain (minus a set of parenthesis).</p>
-<p>With that long winded explanation, we get to your task for this challenge. Implement the function chain. Then implement one more function that is the flipped version of chain:</p>
+<p>If you know the associativity of -&gt; you’ll know that this is exactly the same as the first type signature we had for <code>chain</code> (minus a set of parenthesis).</p>
+<p>With that long winded explanation, we get to your task for this challenge. Implement the function <code>chain</code>. Then implement one more function that is the flipped version of <code>chain</code>:</p>
 <pre><code>link :: Maybe a -&gt; (a -&gt; Maybe b) -&gt; Maybe b</code></pre>
-<p>After you do that, implement this function using your link function. (You can also do it with chain, but link tends to facilitate a more convenient style.)</p>
+<p>After you do that, implement this function using your <code>link</code> function. (You can also do it with <code>chain</code>, but <code>link</code> tends to facilitate a more convenient style.)</p>
 <pre><code>queryGreek2 :: GreekData -&gt; String -&gt; Maybe Double</code></pre>
-<p>This function should have the exact same behavior as queryGreek from the previous exercise.</p>
-<p>Writing queryGreek2 will probably be more difficult than writing chain. There should be no case expressions in queryGreek2–only calls to link or chain. Once you have it working, play around with other syntax possibilities and see if you can get it to look nice. Hint: lambdas are your friend.</p>
+<p>This function should have the exact same behavior as <code>queryGreek</code> from the previous exercise.</p>
+<p>Writing <code>queryGreek2</code> will probably be more difficult than writing <code>chain</code>. There should be no case expressions in <code>queryGreek2</code>–only calls to <code>link</code> or <code>chain</code>. Once you have it working, play around with other syntax possibilities and see if you can get it to look nice. Hint: lambdas are your friend.</p>
 <p><a href="ex2-3.html">Previous Page</a> - <a href="ex2-5.html">Next Page</a></p>
 
       </section>

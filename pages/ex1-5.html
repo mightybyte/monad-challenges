@@ -48,12 +48,12 @@
       <section>
         <h1>Generalizing Lists of Generators</h1>
 
-        <p>By now you have probably realized that generating multiple random numbers this way is rather painful. You have to thread the output seed from one rand call to the input of the next call. This is tedious and error prone, so now you will create a function to make this a little easier.</p>
+        <p>By now you have probably realized that generating multiple random numbers this way is rather painful. You have to thread the output seed from one <code>rand</code> call to the input of the next call. This is tedious and error prone, so now you will create a function to make this a little easier.</p>
 <pre><code>repRandom :: [Gen a] -&gt; Gen [a]</code></pre>
 <p>This function lets you give it a list of generators and it automatically handles the state threading for you.</p>
-<p>The nice thing about this function is that [Gen a] is really general, so it composes well with other built-in list functions. For example:</p>
+<p>The nice thing about this function is that <code>[Gen a]</code> is really general, so it composes well with other built-in list functions. For example:</p>
 <pre><code>repRandom (replicate 3 randLetter) (mkSeed 1)</code></pre>
-<p>This function should generate the same three letters that you got from randString3 in challenge #2.</p>
+<p>This function should generate the same three letters that you got from <code>randString3</code> in challenge #2.</p>
 <p><a href="ex1-4.html">Previous Page</a> - <a href="ex1-6.html">Next Page</a></p>
 
       </section>

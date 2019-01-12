@@ -48,19 +48,19 @@
       <section>
         <h1>More Generators</h1>
 
-        <p>Now write a few more functions to generate different subsets of random numbers. But first, we need to generalize a bit. If we look at the type signatures for rand and randLetter, what are the commonalities?</p>
+        <p>Now write a few more functions to generate different subsets of random numbers. But first, we need to generalize a bit. If we look at the type signatures for <code>rand</code> and <code>randLetter</code>, what are the commonalities?</p>
 <pre><code>rand :: Seed -&gt; (Integer, Seed)
 randLetter :: Seed -&gt; (Char, Seed)</code></pre>
 <p>This common pattern can be captured in a type synonym. The key point here is that they use two different types, so you will have to introduce a type parameter. Create a type synonym that would allow us to change the type signatures of these two functions to the following:</p>
 <pre><code>rand :: Gen Integer
 randLetter :: Gen Char</code></pre>
-<p>This is a relatively obvious type synonym and it is pretty easy to write, but it enables a big mental leap. Now that we have this type synonym we’ve jumped up a level of abstraction and higher level patterns will become more apparent. First go back and rewrite all your existing type signatures using this Gen type synonym. Now write three new functions:</p>
+<p>This is a relatively obvious type synonym and it is pretty easy to write, but it enables a big mental leap. Now that we have this type synonym we’ve jumped up a level of abstraction and higher level patterns will become more apparent. First go back and rewrite all your existing type signatures using this <code>Gen</code> type synonym. Now write three new functions:</p>
 <pre><code>randEven :: Gen Integer -- the output of rand * 2
 randOdd :: Gen Integer -- the output of rand * 2 + 1
 randTen :: Gen Integer -- the output of rand * 10</code></pre>
-<p>Where randEven and randOdd generate only even and odd numbers respectively and randTen generates only multiples of 10. Write randEven in terms of rand, write randOdd in terms of randEven, and write randTen however you want. There’s a general pattern lurking here. If you implement all these functions the naive way like you did fiveRands, you’ll be repeating the same pattern over and over. Figure out how to exploit the common pattern and write a function called generalA that implements the pattern. All three of the above functions will also use generalA. There are a number of different ways you could abstract this. We realize that you may not pick the right abstraction. Play around with as many different possibilities as you can think of.</p>
+<p>Where <code>randEven</code> and <code>randOdd</code> only generate even and odd numbers respectively, <code>randTen</code> only generates multiples of 10. Write <code>randEven</code> in terms of <code>rand</code>, write <code>randOdd</code> in terms of <code>randEven</code>, and write <code>randTen</code> however you want. There’s a general pattern lurking here. If you implement all these functions the naive way like you did <code>fiveRands</code>, you’ll be repeating the same pattern over and over. Figure out how to exploit the common pattern and write a function called <code>generalA</code> that implements this pattern. All three of the above functions will also use <code>generalA</code>. There are a number of different ways you could abstract this. We realize that you may not pick the right abstraction. Play around with as many different possibilities as you can think of.</p>
 <p>SPEND SOME TIME WITH THIS BEFORE READING THE HINT!</p>
-<p>Play with a number of abstractions and try to find the most flexible. After you’ve spent some time with it, look at the hint <a href="ex1-3hint.html">here</a>.</p>
+<p>Play with a number of abstractions and try to find the most flexible one. After you’ve spent some time with it, look at the hint <a href="ex1-3hint.html">here</a>.</p>
 <p>Pass all three of these functions a seed of 1. They’ll give you three numbers back, the product of which is 189908109902700.</p>
 <p><a href="ex1-2.html">Previous Page</a> - <a href="ex1-4.html">Next Page</a></p>
 

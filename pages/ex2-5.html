@@ -48,23 +48,23 @@
       <section>
         <h1>Chaining variations</h1>
 
-        <p>Our division function returned a Maybe because there is a case when it can’t give a meaningful answer. But what if we were using a different operator that doesn’t fail?</p>
+        <p>Our division function returned a <code>Maybe</code> because there is a case when it can’t give a meaningful answer. But what if we were using a different operator that doesn’t fail?</p>
 <pre><code>salaries :: [(String, Integer)]
 salaries = [ (&quot;alice&quot;, 105000)
            , (&quot;bob&quot;, 90000)
            , (&quot;carol&quot;, 85000)
            ]</code></pre>
-<p>Write a function addSalaries that adds two salaries by person name.</p>
+<p>Write a function <code>addSalaries</code> that adds two salaries by person name.</p>
 <pre><code>addSalaries :: [(String, Integer)] -&gt; String -&gt; String -&gt; Maybe Integer</code></pre>
-<p>You give this function a data structure with salary info and the names of two people and it returns the sum of their salaries. But if you give it a name that is not in the list, then there is no way to add the salaries so it should return Nothing.</p>
-<p>Now generalize this pattern in the same way we generalized chain/link in the previous exercise.</p>
-<p>Call this function yLink…because it is kind of like a y-shaped chain/link. Coming up with the right type signature is often the tricky part. Take a look at how we came up with the chain type signature in the last exercise and see if you can came up with yLink’s type signature. Make a serious effort here.</p>
+<p>You give this function a data structure with salary info and the names of two people and it returns the sum of their salaries. But if you give it a name that is not in the list, then there is no way to add the salaries so it should return <code>Nothing</code>.</p>
+<p>Now generalize this pattern in the same way we generalized <code>chain</code>/<code>link</code> in the previous exercise.</p>
+<p>Call this function <code>yLink</code>…because it is kind of like a y-shaped <code>chain</code>/<code>link</code>. Coming up with the right type signature is often the tricky part. Take a look at how we came up with the <code>chain</code> type signature in the last exercise and see if you can came up with <code>yLink</code>’s type signature. Make a serious effort here.</p>
 <p>If you were not able to come up with a good generalized type signature, here is the hex encoded version of what we are looking for.</p>
 <pre><code>794C696E6B203A3A202861202D3E2062202D3E206329202D3E204D617962652061202D3E204D617962652062202D3E204D617962652063</code></pre>
-<p>Once you have the type signature, implement yLink using link. <em>Do not use cases or pattern matching</em>. Once you have that working, implement addSalaries again as addSalaries2 using yLink this time.</p>
-<p>Notice that in both addSalaries and yLink you have to construct a Maybe out of thin air kind of like we did in Set 1 with mkGen. Write a similar function for Maybes with this type signature.</p>
+<p>Once you have the type signature, implement <code>yLink</code> using <code>link</code>. <em>Do not use cases or pattern matching</em>. Once you have that working, implement <code>addSalaries</code> again as <code>addSalaries2</code> using <code>yLink</code> this time.</p>
+<p>Notice that in both <code>addSalaries</code> and <code>yLink</code> you have to construct a <code>Maybe</code> out of thin air kind of like we did in Set 1 with <code>mkGen</code>. Write a similar function for <code>Maybe</code>s with this type signature.</p>
 <pre><code>mkMaybe :: a -&gt; Maybe a</code></pre>
-<p>Now use this function in your addSalaries and yLink functions. You’ll probably find this easier for Maybe than it was for Gen. It may not seem worthwhile, but this is all about finding common patterns. This pattern has come up twice in two different contexts now, so it’s probably worth paying attention to.</p>
+<p>Now use this function in your <code>addSalaries</code> and <code>yLink</code> functions. You’ll probably find this easier for <code>Maybe</code> than it was for <code>Gen</code>. It may not seem worthwhile, but this is all about finding common patterns. This pattern has come up twice in two different contexts now, so it’s probably worth paying attention to.</p>
 <p><a href="ex2-4.html">Previous Page</a> - <a href="ex2-6.html">Next Page</a></p>
 
       </section>

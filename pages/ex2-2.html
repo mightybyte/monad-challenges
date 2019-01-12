@@ -48,14 +48,14 @@
       <section>
         <h1>Build a library of things that can fail</h1>
 
-        <p>Now that you have a Maybe type, you need to use it. So now use it to build safe versions of several common functions specified by the prelude.</p>
+        <p>Now that you have a <code>Maybe</code> type, you need to use it. So now use it to build safe versions of several common functions specified by the Prelude.</p>
 <pre><code>headMay :: [a] -&gt; Maybe a
 tailMay :: [a] -&gt; Maybe [a]
 lookupMay :: Eq a =&gt; a -&gt; [(a, b)] -&gt; Maybe b
 divMay :: (Eq a, Fractional a) =&gt; a -&gt; a -&gt; Maybe a
 maximumMay :: Ord a =&gt; [a] -&gt; Maybe a
 minimumMay :: Ord a =&gt; [a] -&gt; Maybe a</code></pre>
-<p>The functions headMay and tailMay are “safe” versions of the well known head and tail functions. The former returns the first element of a list or Nothing if the list is empty. The latter returns a list containing all but the first element of a list, or Nothing if the list is empty. The lookupMay function is kind of like the lookup for a map. Find the first tuple in the list where the first element is the equal to the passed in value and return the second element. If there is no matching ‘a’, then return Nothing. The divMay function should return Nothing if you’re dividing by zero and the result of the division otherwise. maximumMay and minimumMay calculate the maximum and minimum respectively of all the numbers in the list, but if the list is empty they return Nothing.</p>
+<p>The functions <code>headMay</code> and <code>tailMay</code> are “safe” versions of the well known <code>head</code> and <code>tail</code> functions. The former returns the first element of a list or <code>Nothing</code> if the list is empty. The latter returns a list containing all but the first element of a list, or <code>Nothing</code> if the list is empty. The <code>lookupMay</code> function is kind of like the <code>lookup</code> for a map. Find the first tuple in the list where the first element is the equal to the passed in value and return the second element. If there is no matching <code>a</code>, then return <code>Nothing</code>. The <code>divMay</code> function should return <code>Nothing</code> if you’re dividing by <code>0</code> and the result of the division otherwise. <code>maximumMay</code> and <code>minimumMay</code> calculate the maximum and minimum respectively of all the numbers in the list, but if the list is empty they return <code>Nothing</code>.</p>
 <p><a href="ex2-1.html">Previous Page</a> - <a href="ex2-3.html">Next Page</a></p>
 
       </section>
