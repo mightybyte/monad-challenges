@@ -52,12 +52,12 @@
 <pre><code>tailProd :: Num a =&gt; [a] -&gt; Maybe a</code></pre>
 <p>Now write a similar but slightly different function:</p>
 <pre><code>tailSum :: Num a =&gt; [a] -&gt; Maybe a</code></pre>
-<p>These two functions have a lot in common. See if you can abstract out the commonality. To do this, write another function called <code>transMaybe</code> that is the generalized version of both of these. Spend some time working on this before you look at the next hint:</p>
+<p>These two functions have a lot in common. See if you can abstract out the commonality. To do this, write another function called <code>transMaybe</code> that is the generalized version of both of these. Spend some time working on this before you look at the next <a href="http://www.convertstring.com/EncodeDecode/HexDecode">hex encoded</a> hint:</p>
 <pre><code>7472616E734D61796265203A3A202861202D3E206229202D3E204D617962652061202D3E204D617962652062</code></pre>
 <p>Write a function with that type signature and then go back and implement <code>tailProd</code> and <code>tailSum</code> in terms of that function.</p>
-<p>Now that you have that finished, use <code>transMaybe</code> again to write two more functions <code>tailMax</code> and <code>tailMin</code>. These functions will have different type signatures than <code>tailProd</code> and <code>tailSum</code>. See if you can figure out what they should be. If you can’t figure it out, here’s one.</p>
+<p>Now that you have that finished, use <code>transMaybe</code> again, with <code>maximumMay</code> and <code>minimumMay</code>, to write two more functions <code>tailMax</code> and <code>tailMin</code>. These functions will have different type signatures than <code>tailProd</code> and <code>tailSum</code>. See if you can figure out what they should be. If you can’t figure it out, here’s a <a href="http://www.convertstring.com/EncodeDecode/HexDecode">hex</a> encoded hint.</p>
 <pre><code>7461696C4D6178203A3A204F72642061203D3E205B615D202D3E204D6179626520284D61796265206129</code></pre>
-<p>That type signature is different from the ones above for <code>tailProd</code> and <code>tailSum</code> and less convenient to use. To collapse the two levels you’ll need another helper function. See if you can figure out what the type signature of this function should be and how to implement it. Call this function <code>combine</code>. Here is its hex encoded type signature if you need help.</p>
+<p>That type signature is different from the ones above for <code>tailProd</code> and <code>tailSum</code> and less convenient to use. To collapse the two levels you’ll need another helper function. See if you can figure out what the type signature of this function should be and how to implement it. Call this function <code>combine</code>. Here is its <a href="http://www.convertstring.com/EncodeDecode/HexDecode">hex</a> encoded type signature if you need help.</p>
 <pre><code>636F6D62696E65203A3A204D6179626520284D61796265206129202D3E204D617962652061</code></pre>
 <p><a href="ex2-5.html">Previous Page</a> - <a href="set3.html">Next Page</a></p>
 

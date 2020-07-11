@@ -9,10 +9,12 @@ content that could be added.
 The site is a static site generated with
 [Hakyll](http://hackage.haskell.org/package/hakyll). To make edits to the text
 or to add new sets/exercises, you should edit the markdown files in
-[hakyll/pages](https://github.com/mightybyte/monad-challenges/tree/gh-pages/hakyll/pages).
-The hakyll site generator is defined in the cabal file.  After you build it,
-make sure the regen.sh script points to the correct location and run the
-script.
+[monad-challenges-code/hakyll/pages](https://github.com/mightybyte/monad-challenges/tree/gh-pages/hakyll/pages).
+
+To build, run `nix-build` from the `monad-challenges-code` directory.
+
+To regenerate the HTML, go to the `monad-challenges-code/hakyll` directory and
+run `./regen.sh`.
 
 If you want to contribute, but don't know what to do, check out the [open
 issues](https://github.com/mightybyte/monad-challenges/issues) and see if you
