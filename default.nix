@@ -1,6 +1,6 @@
-{ compiler ? "ghc844"
-, rev      ? "919c37786ca80de6d13af215873176a8820aac28"
-, sha256   ? "1q24zdr6dvjba68jgwa1cyar59f8rrchli0l9qxhq1x51v99bz87"
+{ compiler ? "ghc881"
+, rev      ? "c4f97342ba8ac84def72328616dd05d005bb4715"
+, sha256   ? "1p2gbisib2jrz4r9b5vzfvmirgmz9sr2ksalngaw908vvg9hsvai"
 , pkgs     ?
     import (builtins.fetchTarball {
       url    = "https://github.com/NixOS/nixpkgs/archive/${rev}.tar.gz";
@@ -9,36 +9,34 @@
       config.allowUnfree = true;
     }
 }:
-let gitignore = pkgs.callPackage (pkgs.fetchFromGitHub {
-      owner = "siers";
-      repo = "nix-gitignore";
-      rev = "4f2d85f2f1aa4c6bff2d9fcfd3caad443f35476e";
-      sha256 = "1vzfi3i3fpl8wqs1yq95jzdi6cpaby80n8xwnwa8h2jvcw3j7kdz";
+let gitignoreSrc = import (pkgs.fetchFromGitHub {
+      owner = "hercules-ci";
+      repo = "gitignore";
+      rev = "2ced4519f865341adcb143c5d668f955a2cb997f";
+      sha256 = "0fc5bgv9syfcblp23y05kkfnpgh3gssz6vn24frs8dzw39algk2z";
     }) {};
 
-    # Working on getting this function upstreamed into nixpkgs.
-    # (See https://github.com/NixOS/nixpkgs/pull/52848 for status)
-    # This actually gets things directly from hackage and doesn't
-    # depend on the state of nixpkgs.  Allows you to have fewer
-    # fetchFromGitHub overrides.
-    callHackageDirect = {pkg, ver, sha256}@args:
-      let pkgver = "${pkg}-${ver}";
-      in pkgs.haskell.packages.${compiler}.callCabal2nix pkg (pkgs.fetchzip {
-           url = "http://hackage.haskell.org/package/${pkgver}/${pkgver}.tar.gz";
-           inherit sha256;
-         }) {};
 in
 pkgs.haskell.packages.${compiler}.developPackage {
   name = builtins.baseNameOf ./.;
-  root = gitignore.gitignoreSource [] ./.;
+  root = gitignoreSrc.gitignoreSource ./.;
+
   overrides = self: super: with pkgs.haskell.lib; {
     # Don't run a package's test suite
-    Diff = dontCheck super.Diff;
-    cereal = dontCheck super.cereal;
-
+    # foo = dontCheck super.foo;
+    #
     # Don't enforce package's version constraints
     # bar = doJailbreak super.bar;
     #
+    # Get a specific hackage version straight from hackage. Unlike the above
+    # callHackage approach, this will always succeed if the version is on
+    # hackage. The downside is that you have to specify the hash manually.
+    # hakyll = self.callHackageDirect {
+    #   pkg = "hakyll";
+    #   ver = "4.13.3.0";
+    #   sha256 = "1maf8z5il6gs3gh6f9jw8pflnc50imvf8gr4x6zrfbayjnd674ql";
+    # } {};
+
     # To discover more functions that can be used to modify haskell
     # packages, run "nix-repl", type "pkgs.haskell.lib.", then hit
     # <TAB> to get a tab-completed list of functions.
@@ -47,15 +45,6 @@ pkgs.haskell.packages.${compiler}.developPackage {
     # Use a specific hackage version using callHackage. Only works if the
     # version you want is in the version of all-cabal-hashes that you have.
     # bytestring = "0.10.8.1";
-    #
-    # Get a specific hackage version straight from hackage. Unlike the above
-    # callHackage approach, this will always succeed if the version is on
-    # hackage. The downside is that you have to specify the hash manually.
-    # aeson = callHackageDirect {
-    #   pkg = "aeson";
-    #   ver = "1.4.2.0";
-    #   sha256 = "0qcczw3l596knj9s4ha07wjspd9wkva0jv4734sv3z3vdad5piqh";
-    # };
     #
     # Use a particular commit from github
     # parsec = pkgs.fetchFromGitHub
