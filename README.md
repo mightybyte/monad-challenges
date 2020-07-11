@@ -9,7 +9,7 @@ content that could be added.
 The site is a static site generated with
 [Hakyll](http://hackage.haskell.org/package/hakyll). To make edits to the text
 or to add new sets/exercises, you should edit the markdown files in
-[monad-challenges-code/hakyll/pages](https://github.com/mightybyte/monad-challenges/tree/gh-pages/hakyll/pages).
+[monad-challenges-code/hakyll/pages](https://github.com/mightybyte/monad-challenges/tree/master/hakyll/pages).
 
 To build, run `nix-build` from the `monad-challenges-code` directory.
 
