@@ -102,7 +102,7 @@ First clone the monad-challenges github repository and build the associated
 library.
 
     git clone https://github.com/mightybyte/monad-challenges.git
-    cd monad-challenges
+    cd monad-challenges/monad-challenges-code
     cabal install
 
 This makes the MCPrelude module available on your system. Now head on over to
