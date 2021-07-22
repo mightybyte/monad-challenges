@@ -77,7 +77,8 @@ For all of these problem sets you should use the following language pragmas
 and imports:
 
     {-# LANGUAGE MonadComprehensions #-}
-    {-# LANGUAGE RebindableSyntax  #-}
+    {-# LANGUAGE RebindableSyntax #-}
+    {-# LANGUAGE InstanceSigs #-}
 
     module Set1 where
 
