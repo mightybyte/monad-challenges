@@ -55,12 +55,14 @@
 <p>You should use this definition and names going forward. We just wanted you to work on it yourself first.</p>
 <p>Then for convenience write a <code>Show</code> instance for this new type.</p>
 <pre><code>instance Show a =&gt; Show (Maybe a) where
-  show :: (Maybe a) -&gt; String</code></pre>
+  -- show :: Maybe a -&gt; String
+  show = undefined</code></pre>
 <p>If you’re having trouble with this, here is the <a href="http://www.convertstring.com/EncodeDecode/HexDecode">hex encoded</a> instance.</p>
 <pre><code>202073686F77204E6F7468696E67203D20224E6F7468696E6722DA202073686F7720284A757374206129203D20224A7573742022202B2B2073686F772061</code></pre>
 <p>You are also going to need an <code>Eq</code> instance as well.</p>
 <pre><code>instance Eq a =&gt; Eq (Maybe a) where
-  (==) :: Maybe a -&gt; Maybe a -&gt; Bool</code></pre>
+  -- (==) :: Maybe a -&gt; Maybe a -&gt; Bool
+  (==) = undefined</code></pre>
 <p>We’re not going to give you the answer to this one. In the worst case scenario you should be able to figure it out from the way the <code>Show</code> instance was done.</p>
 <p>On the other hand, if writing these instances was too difficult, it might be good to go study some more introductory Haskell materials before continuing here.</p>
 <p><a href="set2.html">Previous Page</a> - <a href="ex2-2.html">Next Page</a></p>
